@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Matchmaking</title>
+    <link rel="stylesheet" href="file.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap');
+        
+      
+    </style>
+</head>
+<body class="bg-[#fdfbee] font-['Inter'] min-h-screen">
+   
+    <header class="flex justify-between items-center px-8 py-4 bg-footer rounded-xl mx-12 mt-4 shadow-md">
+        <img src="public/logo.png" class="h-12" alt="Logo">
+
+        <nav class="hidden md:flex nav-gap-51 text-white text-lg font-regular">
+            <a href="#" class="hover:text-orange-400">Home</a>
+            <a href="#" class="hover:text-orange-400">Planner</a>
+            <a href="#" class="hover:text-orange-400">Match Making</a>
+            <a href="#" class="hover:text-orange-400">Focus</a>
+            <a href="#" class="hover:text-orange-400">Analytics</a>
+            <a href="#" class="hover:text-orange-400">Forum</a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+            <button class="relative">
+                <img src="public/notification.png" class="h-6"></button>
+            <button class="relative">
+                <img src="public/parametres.png" class="h-6"></button>
+            <img src="public/user.png" class="h-12 w-14 rounded-full" alt="User">
+        </div>
+    </header>
+
+    <div class="content-container">
+        <main class="py-8 flex flex-col lg:flex-row gap-8">
+            <div class="flex-1">
+                <div class="flex items-start gap-4 mb-6">
+                    <img src="https://c.animaapp.com/mim11mbi0zKcah/img/plus-circle.svg" alt="Plus" class="w-8 h-8 mt-1">
+                    <div>
+                        <h1 class="text-3xl font-bold text-[#004a4a]">Create your own matchmaking</h1>
+                        <p class="text-[#757575] text-sm mt-1">Set up a new matchmaking event for your peers</p>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-[#1e1e1e] font-medium mb-2">Matchmaking Title</label>
+                    <input type="text" placeholder="e.g., Online session for devops..." 
+                        class="w-full px-4 py-3 bg-white rounded-[20px] border border-[#d9d9d9]">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-[#1e1e1e] font-medium mb-2">Date</label>
+                    <div class="flex gap-2">
+                        <input type="text" placeholder="DD" 
+                            class="flex-1 px-4 py-3 bg-white rounded-lg border border-[#d9d9d9] text-center">
+                        <input type="text" placeholder="MM" 
+                            class="flex-1 px-4 py-3 bg-white rounded-lg border border-[#d9d9d9] text-center">
+                        <input type="text" placeholder="YYYY" 
+                            class="flex-1 px-4 py-3 bg-white rounded-lg border border-[#d9d9d9] text-center">
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-[#1e1e1e] font-medium mb-2">Time</label>
+                    <div class="bg-white/40 rounded-[28px] p-6 flex justify-center">
+                        <div class="w-64 h-64 rounded-full border-2 border-[#fe4f2d] relative flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-[#fe4f2d] text-xl font-medium">12:00</div>
+                                <div class="text-sm text-gray-500">Set time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-[#1e1e1e] font-medium mb-2">Matchmaking Type</label>
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-[#fe4f2d33] text-[#fe4f2d] py-2 rounded-3xl flex items-center justify-center gap-1">
+                            <img src="https://c.animaapp.com/mim11mbi0zKcah/img/icon-5.svg" alt="Online" class="w-5 h-5">
+                            Online
+                        </button>
+                        <button class="flex-1 bg-[#fe4f2d33] text-[#fe4f2d] py-2 rounded-3xl flex items-center justify-center gap-1">
+                            <img src="https://c.animaapp.com/mim11mbi0zKcah/img/icon-3.svg" alt="Group" class="w-5 h-5">
+                            Group
+                        </button>
+                        <button class="flex-1 bg-white text-[#fe4f2d] py-2 rounded-[20px] flex items-center justify-center gap-1">
+                            <img src="https://c.animaapp.com/mim11mbi0zKcah/img/icon-1.svg" alt="Individual" class="w-5 h-5">
+                            Individual
+                        </button>
+                        <button class="flex-1 bg-white text-[#fe4f2d] py-2 rounded-[20px] flex items-center justify-center gap-1">
+                            <img src="https://c.animaapp.com/mim11mbi0zKcah/img/icon-12.svg" alt="In-Person" class="w-5 h-5">
+                            In-Person
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="mb-6">
+                    <div class="flex justify-between mb-2">
+                        <span>0</span>
+                        <span>33</span>
+                    </div>
+                    <div class="h-2 bg-[#e6e6e6] rounded-full relative">
+                        <div class="absolute left-0 right-0 flex justify-between">
+                            <div class="w-4 h-4 bg-[#fe4f2d33] rounded-full -mt-1"></div>
+                            <div class="w-4 h-4 bg-[#fe4f2d33] rounded-full -mt-1"></div>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-[#1e1e1e]">Select your group number.</p>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-[#1e1e1e] font-medium mb-2">Additional Options</label>
+                    <div class="flex flex-wrap gap-2">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="additional-options" value="JS" class="hidden peer">
+                            <div class="bg-[#57b4ba38] text-[#004a4ac4] px-4 py-2 rounded-[20px] flex items-center gap-3 peer-checked:bg-[#57b4ba] peer-checked:text-white transition-all duration-200">
+                                <div class="w-5 h-5 rounded-full border-2 border-[#004a4ac4] flex items-center justify-center peer-checked:border-white">
+                                    <div class="w-2 h-2 rounded-full bg-transparent peer-checked:bg-white"></div>
+                                </div>
+                                JS
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="additional-options" value="DEVOPS" class="hidden peer">
+                            <div class="bg-[#57b4ba38] text-[#004a4ac4] px-4 py-2 rounded-[20px] flex items-center gap-3 peer-checked:bg-[#57b4ba] peer-checked:text-white transition-all duration-200">
+                                <div class="w-5 h-5 rounded-full border-2 border-[#004a4ac4] flex items-center justify-center peer-checked:border-white">
+                                    <div class="w-2 h-2 rounded-full bg-transparent peer-checked:bg-white"></div>
+                                </div>
+                                DEVOPS
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="additional-options" value="ANGULAR" class="hidden peer">
+                            <div class="bg-[#57b4ba38] text-[#004a4ac4] px-4 py-2 rounded-[20px] flex items-center gap-3 peer-checked:bg-[#57b4ba] peer-checked:text-white transition-all duration-200">
+                                <div class="w-5 h-5 rounded-full border-2 border-[#004a4ac4] flex items-center justify-center peer-checked:border-white">
+                                    <div class="w-2 h-2 rounded-full bg-transparent peer-checked:bg-white"></div>
+                                </div>
+                                ANGULAR
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="additional-options" value="FRONT" class="hidden peer">
+                            <div class="bg-[#57b4ba38] text-[#004a4ac4] px-4 py-2 rounded-[20px] flex items-center gap-3 peer-checked:bg-[#57b4ba] peer-checked:text-white transition-all duration-200">
+                                <div class="w-5 h-5 rounded-full border-2 border-[#004a4ac4] flex items-center justify-center peer-checked:border-white">
+                                    <div class="w-2 h-2 rounded-full bg-transparent peer-checked:bg-white"></div>
+                                </div>
+                                FRONT
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="additional-options" value="BACKEND" class="hidden peer">
+                            <div class="bg-[#57b4ba38] text-[#004a4ac4] px-4 py-2 rounded-[20px] flex items-center gap-3 peer-checked:bg-[#57b4ba] peer-checked:text-white transition-all duration-200">
+                                <div class="w-5 h-5 rounded-full border-2 border-[#004a4ac4] flex items-center justify-center peer-checked:border-white">
+                                    <div class="w-2 h-2 rounded-full bg-transparent peer-checked:bg-white"></div>
+                                </div>
+                                BACKEND
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <label class="block text-[#1e1e1e] font-medium mb-2">Use your personal hashtag.</label>
+                    <input type="text" placeholder="exemple Java, Angular" 
+                        class="w-full px-4 py-3 bg-white rounded-[20px] border border-[#d9d9d9]">
+                </div>
+
+                <div class="flex gap-4">
+                    <button class="flex-1 bg-gradient-to-r from-[rgba(254,79,45,0.56)] to-[#ff360e] text-white py-3 rounded-[20px]">
+                        Validate
+                    </button>
+                    <button class="flex-1 bg-white text-[#fe4f2d] py-3 rounded-[20px] border border-[#fe4f2d]">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+
+            <div class="lg:w-[345px]">
+                <div class="bg-gray-200 rounded-[20px] p-6 ">
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold text-[#1e1e1e]">Check your full list</h2>
+                        <p class="text-[#757575] text-sm">Manage your previous matchmaking</p>
+                    </div>
+
+                    <div class="space-y-3 mb-6">
+                        <div class="bg-[#57b4ba38] rounded-[20px] py-2 px-4 flex justify-between">
+                            <span>Your completed matchmaking</span>
+                            <span>5</span>
+                        </div>
+                        <div class="bg-[#57b4ba38] rounded-[20px] py-2 px-4 flex justify-between">
+                            <span>Your validated Match up</span>
+                            <span>3</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-[#fdfbee] rounded-[20px] p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-medium">Devops Session</h3>
+                                <span class="bg-[#57b4ba38] text-xs px-2 py-1 rounded-[20px]">completed</span>
+                            </div>
+                            <div class="flex gap-2 mb-4">
+                                <span class="bg-[#7676801f] text-xs px-2 py-1 rounded-full">Apr 1, 2025</span>
+                                <span class="bg-[#7676801f] text-xs px-2 py-1 rounded-full">9:41 AM</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="bg-[#499df29c] text-[#fde8e7] text-xs px-3 py-1 rounded-[20px] border border-[#499df2d1]">
+                                    Repost
+                                </button>
+                                <button class="bg-[#eb221ea8] text-[#fde8e7] text-xs px-3 py-1 rounded-[20px] border border-[#bf0f0c]">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#fdfbee] rounded-[20px] p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-medium">Devops Session</h3>
+                                <span class="bg-[#57b4ba38] text-xs px-2 py-1 rounded-[20px]">completed</span>
+                            </div>
+                            <div class="flex gap-2 mb-4">
+                                <span class="bg-[#7676801f] text-xs px-2 py-1 rounded-full">Apr 1, 2025</span>
+                                <span class="bg-[#7676801f] text-xs px-2 py-1 rounded-full">9:41 AM</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="bg-[#499df29c] text-[#fde8e7] text-xs px-3 py-1 rounded-[20px] border border-[#499df2d1]">
+                                    Repost
+                                </button>
+                                <button class="bg-[#eb221ea8] text-[#fde8e7] text-xs px-3 py-1 rounded-[20px] border border-[#bf0f0c]">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#fdfbee] rounded-[20px] p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-medium">Devops Session</h3>
+                                <span class="bg-[#57b4ba38] text-xs px-2 py-1 rounded-[20px]">completed</span>
+                            </div>
+                            <div class="flex gap-2 mb-4">
+                                <span class="bg-[#7676801f] text-xs px-2 py-1 rounded-full">Apr 1, 2025</span>
+                                <span class="bg-[#7676801f] text-xs px-2 py-1 rounded-full">9:41 AM</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="bg-[#499df29c] text-[#fde8e7] text-xs px-3 py-1 rounded-[20px] border border-[#499df2d1]">
+                                    Repost
+                                </button>
+                                <button class="bg-[#eb221ea8] text-[#fde8e7] text-xs px-3 py-1 rounded-[20px] border border-[#bf0f0c]">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 text-center">
+                        <button style="background: #FE4F2D; border-radius: 20px; padding: 8px 16px;">View your latest correspondance</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+       
+      <footer class="px-10 py-10 bg-footer text-light">
+    <div class="flex flex-col md:flex-row justify-between">
+
+      <div>
+        <img src="public/logo1.png" class="h-16 mb-4 bg-textlight">
+        <p class="max-w-xs text-gray-300 mt-16" >
+          Connecting students worldwide to learn and grow together.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2 bg-textlight">Quick Links</h3>
+        <ul class="space-y-1 text-gray-300 bg-textlight">
+          <li>Home</li>
+          <li>About Us</li>
+          <li>How It Works</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2 bg-textlight">Resources</h3>
+        <ul class="space-y-1 text-gray-300 bg-textlight" >
+          <li>Help Center</li>
+          <li>Privacy Policy</li>
+          <li>Terms of Service</li>
+          <li>FAQs</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2 bg-textlight">Get in Touch</h3>
+        <p class="text-gray-300 mb-3 bg-textlight" >hello@esprit2peer.com</p>
+
+        <div class="flex gap-4">
+          <img src="public/facebook.png" class="h-6">
+          <img src="public/instagram.png" class="h-6">
+          <img src="public/twitter.png" class="h-6">
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-gray-400 mt-10 bg-textlight">
+      © 2025 Esprit2Peer. All Rights Reserved.
+    </p>
+  </footer>
+    </div>
+</body>
+</html>
