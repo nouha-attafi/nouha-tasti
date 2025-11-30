@@ -1,0 +1,109 @@
+@import "tailwindcss";
+/* Variables globales */
+:root {
+  --color-primary: #fdfbee;
+  --color-secondary: #57B4BA;
+    --color-textblue: #32B4AE;
+  --color-accent: #FE4F2D;
+  --color-accent-30: rgb(254, 79, 45, 0.3);
+   --color-card:#F7F4E8;
+  --color-darkgreen: #015551;
+  --color-light: #FFFFFF;
+  --footer-bg: #004A4A;
+  --footer-bg-30: rgb(0, 74, 74, 0.3);
+
+  --color-text: #000000;
+  --color-background: rgb(255, 255, 255, 0.4);
+  --color-button1-start: rgba(254, 79, 45, 0.56); /* #FE4F2D à 56% */
+  --color-button1-end: rgba(255, 54, 14, 1);      /* #FF360E à 100% */
+  --color-p-start: #32B4AE;
+   --color-p-end: #FE4F2D; 
+   --color-b-satart:#57B4BA;
+   --color-b-end:#10B981;
+   --color-backgroundSession: rgb(254, 79, 45, 0.61);
+     --color-backgroundSession1:rgb(0, 74, 74, 0.15);
+
+
+
+}
+
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Classes custom pour utiliser les variables */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-accent1 { color: var(--color-accent); }
+.bg-textlight { color: var(--color-light); }
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-accent { color: var(--color-accent); }
+.bg-footer { background-color: var(--footer-bg); }
+.bg-textdark { color: var(--color-text); }
+.border-primary { border-color: var(--color-primary); }
+.bg-textblue1 { color: var(--color-textblue); }
+.bg-textgreen { color: var(--color-darkgreen); }
+.bg-accent-30 { background-color: var(--color-accent-30); }
+.bg-footer-30 { background-color: var(--footer-bg-30); }
+.bg-back-4 { background-color: var(--color-background); }
+.bg-bgCard{ background-color: var(--color-card); }
+.bg-session { background-color: var(--color-backgroundSession); }
+.bg-session1 { background-color: var( --color-backgroundSession1); }
+
+
+.button {
+  background: linear-gradient(
+    to right,
+    var(--color-button1-start),
+    var(--color-button1-end)
+  );
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.button2 {
+  background: linear-gradient(
+    to right,
+    var(--color-b-satart),
+    var(--color-b-end)
+  );
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.p {
+  background: linear-gradient(
+    to right,
+    var(--color-p-start),
+    var(--color-p-end)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Pour Firefox */
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-hr {
+  border: none; /* Supprime la bordure par défaut */
+  height: 2px;  /* Hauteur de la ligne */
+  background: linear-gradient(to right, var(--color-p-start), var(--color-p-end));
+  border-radius: 2px; /* Optionnel pour arrondir les bords */
+}
+
+.nav-gap-51 {
+  display: flex; 
+  gap: 51px;
+}
+
+
+
