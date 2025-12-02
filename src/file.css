@@ -1,117 +1,38 @@
-/* file.css - Fichier CSS complet fusionné */
 @import "tailwindcss";
-
+/* Variables globales */
 :root {
   --color-primary: #fdfbee;
   --color-secondary: #57B4BA;
-    --color-textblue: #32B4AE;
+  --color-textblue: #32B4AE;
   --color-accent: #FE4F2D;
   --color-accent-30: rgb(254, 79, 45, 0.3);
-   --color-card:#F7F4E8;
+  --color-card: #F7F4E8;
   --color-darkgreen: #015551;
-  --color-light: #FFFFFF;
   --footer-bg: #004A4A;
-  --footer-bg-30: rgb(0, 74, 74, 0.3);
-
+  --color-light: #FFFFFF;
+  --footer-bg-30: rgba(37, 184, 184, 0.3);
   --color-text: #000000;
   --color-background: rgb(255, 255, 255, 0.4);
   --color-button1-start: rgba(254, 79, 45, 0.56); /* #FE4F2D à 56% */
   --color-button1-end: rgba(255, 54, 14, 1);      /* #FF360E à 100% */
   --color-p-start: #32B4AE;
-   --color-p-end: #FE4F2D; 
-   --color-b-satart:#57B4BA;
-   --color-b-end:#10B981;
-   --color-backgroundSession: rgb(254, 79, 45, 0.61);
-     --color-backgroundSession1:rgb(0, 74, 74, 0.15);
-
-
-
-}
-
-@theme {
-  /* Variables de couleurs harmonisées */
-  --color-primary: #fdfbee;
-  --color-secondary: #57B4BA;
-  --color-accent: #FE4F2D;
-  --color-darkgreen: #015551;
-  --color-dark-green: #015551;
-  --color-beige: #f8f6e9;
-  --color-dark-teal: #0a3e3d;
-  --color-light: #FFFFFF;
-  --color-footer: #004A4A;
-  --color-card: #F7F4E8;
-  --color-textblue: #32B4AE;
-  --color-text-blue: #32B4AE;
-  --color-accent-30: rgba(254, 79, 45, 0.3);
-  --color-footer-30: rgba(0, 74, 74, 0.3);
-  --color-background-session: rgba(254, 79, 45, 0.61);
-  --color-background-session1: rgba(0, 74, 74, 0.15);
-  --color-backgroundSession: rgba(254, 79, 45, 0.61);
-  --color-backgroundSession1: rgba(0, 74, 74, 0.15);
-  
-  /* Couleurs spécifiques */
-  --color-text: #000000;
-  --color-background: rgba(255, 255, 255, 0.4);
-  --color-red-light: #fca5a5;
-  --color-red-dark: #9b1c1c;
-  --color-blue-light: #60a5fa;
-  --color-blue-dark: #1e40af;
-  --color-teal-light: #b9d9d9;
-  --color-gray-light: #5a7a79;
-  --color-analytics-bg: #fbf9ef;
-  --color-deep: #073f39;
-  --color-mint-1: #dbf3e9;
-  --color-mint-2: #bfe9d8;
-  --color-peach: #ff7b6b;
-  --color-muted: #8b8b8b;
-  
-  /* Gradients */
-  --color-button1-start: rgba(254, 79, 45, 0.56);
-  --color-button1-end: rgba(255, 54, 14, 1);
-  --color-p-start: #32B4AE;
-  --color-p-end: #FE4F2D;
-  --color-b-start: #57B4BA;
+  --color-p-end: #FE4F2D; 
+  --color-b-satart: #57B4BA;
+   --color-tags:rgba(229, 233, 235, 0.623);
   --color-b-end: #10B981;
+  --color-backgroundSession: rgb(254, 79, 45, 0.61);
+  --color-backgroundSession1: rgb(0, 74, 74, 0.15);
   
-  /* Espacements personnalisés */
-  --spacing-18: 4.5rem;
-  --spacing-22: 5.5rem;
-  --spacing-30: 7.5rem;
-  --spacing-51: 12.75rem;
-  
-  /* Bordures arrondies */
-  --radius-14: 14px;
-  
-  /* Font families */
-  --font-family-heading: Poppins, Inter, system-ui, sans-serif;
+  /* NEW VARIABLE ADDED FOR MODAL STAR COLOR */
+  --color-star-active: #FBBF24; /* Yellow for active stars */
 }
 
-/* Classes de couleurs personnalisées */
-.bg-primary { background-color: var(--color-primary); }
-.bg-secondary { background-color: var(--color-secondary); }
-.bg-accent { background-color: var(--color-accent); }
-.bg-footer { background-color: var(--color-footer); }
-.bg-beige { background-color: var(--color-beige); }
-.bg-dark-teal { background-color: var(--color-dark-teal); }
-.bg-bgCard { background-color: var(--color-card); }
-.bg-session { background-color: var(--color-backgroundSession); }
-.bg-session1 { background-color: var(--color-backgroundSession1); }
-.bg-accent-30 { background-color: var(--color-accent-30); }
-.bg-footer-30 { background-color: var(--color-footer-30); }
-.bg-back-4 { background-color: var(--color-background); }
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Couleurs de texte */
-.text-primary { color: var(--color-primary); }
-.text-secondary { color: var(--color-secondary); }
-.text-accent { color: var(--color-accent); }
-.text-dark-teal { color: var(--color-dark-teal); }
-.text-darkgreen { color: var(--color-darkgreen); }
-.text-accent1 { color: var(--color-accent); }
-.text-textlight { color: var(--color-light); }
-.text-textdark { color: var(--color-text); }
-.text-textblue1 { color: var(--color-textblue); }
-.text-textgreen { color: var(--color-darkgreen); }
-
+/* Classes custom pour utiliser les variables */
 .bg-primary { background-color: var(--color-primary); }
 .bg-secondary { background-color: var(--color-secondary); }
 .bg-accent { background-color: var(--color-accent); }
@@ -128,159 +49,9 @@
 .bg-accent-30 { background-color: var(--color-accent-30); }
 .bg-footer-30 { background-color: var(--footer-bg-30); }
 .bg-back-4 { background-color: var(--color-background); }
-.bg-bgCard{ background-color: var(--color-card); }
+.bg-bgCard { background-color: var(--color-card); }
 .bg-session { background-color: var(--color-backgroundSession); }
-.bg-session1 { background-color: var( --color-backgroundSession1); }
-/* Bordures */
-.border-primary { border-color: var(--color-primary); }
-
-/* Classes de gradients */
-.bg-gradient-red {
-  background: linear-gradient(to right, var(--color-button1-start), var(--color-button1-end));
-}
-
-.bg-gradient-blue {
-  background: linear-gradient(to right, var(--color-b-start), var(--color-b-end));
-}
-
-.bg-gradient-text {
-  background: linear-gradient(to right, var(--color-p-start), var(--color-p-end));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.bg-gradient-calendar {
-  background: linear-gradient(to bottom, #f8fafc, #ffffff);
-}
-
-.bg-gradient-urgent {
-  background: linear-gradient(135deg, #ff6b5a 0%, #ff8a5a 100%);
-}
-
-.bg-gradient-medium {
-  background: linear-gradient(135deg, #ffb74d 0%, #ffa726 100%);
-}
-
-.bg-gradient-low {
-  background: linear-gradient(135deg, #81c9d8 0%, #64b5c5 100%);
-}
-
-.bg-gradient-present {
-  background: linear-gradient(90deg, #1fb88f, #0ea76e);
-}
-
-.bg-gradient-absent {
-  background: linear-gradient(90deg, #ffb8ae, #ff7b6b);
-}
-
-.bg-gradient-pending {
-  background: linear-gradient(90deg, #7fd3cc, #1fb88f);
-}
-
-.bggrad {
-  background: linear-gradient(
-    to right,
-    rgba(47, 182, 137, 0.863),
-    #949e868c, 
-    rgba(254, 79, 45, 0.42)   
-  );
-}
-
-/* Classes pour les boutons avec compatibilité */
-.button, .button-gradient-red {
-  background: linear-gradient(to right, var(--color-button1-start), var(--color-button1-end));
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  transition: opacity 0.2s;
-}
-
-.button:hover, .button-gradient-red:hover {
-  opacity: 0.9;
-}
-
-.button2, .button-gradient-blue {
-  background: linear-gradient(to right, var(--color-b-start), var(--color-b-end));
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  transition: opacity 0.2s;
-}
-
-.button2:hover, .button-gradient-blue:hover {
-  opacity: 0.9;
-}
-
-/* Classes de texte avec gradient */
-.p, .text-gradient {
-  background: linear-gradient(to right, var(--color-p-start), var(--color-p-end));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Ligne horizontale avec gradient */
-.gradient-hr {
-  border: none;
-  height: 2px;
-  background: linear-gradient(to right, var(--color-p-start), var(--color-p-end));
-  border-radius: 2px;
-}
-
-/* Pie chart pour analytics */
-.conic-gradient-pie {
-  background: conic-gradient(
-    #1fb88f 0 85%,
-    #ffad9d 85% 95%,
-    #7fd3cc 95% 100%
-  );
-}
-
-/* Classes utilitaires */
-.rounded-14 {
-  border-radius: 14px;
-}
-
-.nav-gap-51 {
-  gap: 12.75rem;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.fade-in {
-  animation: fadeIn 0.3s ease-in;
-}
-
-/* Styles responsives */
-@media (max-width: 768px) {
-  .nav-gap-51 {
-    gap: 2rem;
-  }
-  
-  .calendar-grid {
-    min-width: 600px;
-  }
-}
-
-@media (max-width: 480px) {
-  .calendar-grid {
-    min-width: 500px;
-  }
-}
-
-
+.bg-session1 { background-color: var(--color-backgroundSession1); }
 
 .button {
   background: linear-gradient(
@@ -340,4 +111,90 @@
     #949e868c, 
     rgba(254, 79, 45, 0.42)   
   );
+}
+
+/* NEW: Star rating system using your existing variables */
+.star-rating-container {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star-icon {
+  cursor: pointer;
+  color: #E5E7EB; /* Default gray color for inactive stars */
+  transition: color 0.2s ease;
+  font-size: 1.875rem; /* text-3xl */
+  line-height: 2.25rem;
+}
+
+
+
+.star-icon.active {
+  color: var(--color-star-active); /* Yellow for active stars */
+}
+
+.star-icon:hover {
+  color: var(--color-star-active);
+}
+
+/* Hover effect for star groups */
+.star-rating-container:hover .star-icon {
+  color: var(--color-star-active);
+}
+
+.star-rating-container .star-icon:hover ~ .star-icon {
+  color: #E5E7EB;
+}
+
+/* NEW: Modal specific styles using your variables */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 0.75rem; /* rounded-lg */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+}
+
+.modal-header {
+  border-bottom-color: #E5E7EB; /* border-light */
+}
+
+.dark .modal-header {
+  border-bottom-color: #374151; /* border-dark */
+}
+
+.modal-text-secondary {
+  color: #4B5563; /* text-light-secondary */
+}
+
+.dark .modal-text-secondary {
+  color: #D1D5DB; /* text-dark-secondary */
+}
+
+.modal-textarea {
+  border-color: #E5E7EB; /* border-light */
+  background-color: white;
+}
+
+.dark .modal-textarea {
+  border-color: #374151; /* border-dark */
+  background-color: #1F2937; /* background-dark */
+}
+
+.modal-close {
+  color: #4B5563; /* text-light-secondary */
+}
+
+.modal-close:hover {
+  color: #111827; /* text-light-primary */
+}
+
+.dark .modal-close {
+  color: #D1D5DB; /* text-dark-secondary */
+}
+
+.dark .modal-close:hover {
+  color: #F9FAFB; /* text-dark-primary */
 }
