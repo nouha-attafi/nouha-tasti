@@ -23,6 +23,11 @@
    --color-backgroundSession: rgb(254, 79, 45, 0.61);
      --color-backgroundSession1:rgb(0, 74, 74, 0.15);
 
+     /*imen*/
+       --color-textgray: rgb(0, 0, 0, 0.34);
+      --color-backgroundicon: #D9D9D9;
+
+
 
 
 }
@@ -51,7 +56,14 @@
 .bg-back-4 { background-color: var(--color-background); }
 .bg-bgCard{ background-color: var(--color-card); }
 .bg-session { background-color: var(--color-backgroundSession); }
-.bg-session1 { background-color: var( --color-backgroundSession1); }
+.bg-session1 { background-color: var(--color-backgroundSession1); }
+.bg-text-gray{ color: var(--color-textgray); }
+
+/*imen*/
+.bg-accent1 { color: var(--color-accent); }
+.bg-icon { background-color: var(--color-backgroundicon); }
+
+
 
 
 .button {
