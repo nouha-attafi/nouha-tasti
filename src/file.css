@@ -78,3 +78,141 @@
   display: flex;
   gap: 51px;
 }
+body {
+  font-family: "robert", sans-serif;
+}
+
+/* ===== STYLES POUR LES INTERRUPTEURS ET CASES À COCHER ===== */
+
+/* Style pour les interrupteurs (toggles) */
+.toggle-checkbox:checked {
+    right: 0;
+    border-color: var(--color-b-end);
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    background-color: var(--color-b-end);
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-secondary);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color-light);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+    background-color: var(--color-b-end);
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(30px);
+}
+
+/* Style pour les cases à cocher normales */
+.custom-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    background-color: var(--color-card);
+}
+
+.custom-checkbox:checked {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.custom-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    color: var(--color-light);
+    font-size: 14px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Version responsive pour les interrupteurs */
+@media (max-width: 768px) {
+    .toggle-switch {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .toggle-slider:before {
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+    }
+    
+    input:checked + .toggle-slider:before {
+        transform: translateX(25px);
+    }
+    
+    .custom-checkbox {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Classes utilitaires supplémentaires */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.transition-colors {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.transition-opacity {
+    transition: opacity 0.3s ease;
+}
+
+.transition-transform {
+    transition: transform 0.3s ease;
+}
+
+.hover\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+.hover\:shadow-xl:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esprit2Peer - Reminders</title>
+
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lien vers votre fichier CSS -->
+    <link rel="stylesheet" href="file.css" />
+</head>
+<body class="bg-primary text-text">
+
+<!-- VOTRE HEADER -->
+<header class="flex justify-between items-center px-6 md:px-8 py-4 bg-footer rounded-xl mx-4 md:mx-12 mt-4 shadow-md">
+    <!-- Logo -->
+    <img src="public/logo.png" class="h-10 md:h-12" alt="Logo">
+
+    <!-- Navigation desktop -->
+    <nav class="hidden md:flex nav-gap-51 text-white text-lg font-regular">
+        <a href="#" class="hover:text-orange-400 transition-colors duration-300">Home</a>
+        <a href="#" class="hover:text-orange-400 transition-colors duration-300">Planner</a>
+        <a href="#" class="hover:text-orange-400 transition-colors duration-300">Match Making</a>
+        <a href="#" class="hover:text-orange-400 transition-colors duration-300">Focus</a>
+        <a href="#" class="hover:text-orange-400 transition-colors duration-300">Analytics</a>
+        <a href="#" class="hover:text-orange-400 transition-colors duration-300">Forum</a>
+    </nav>
+
+    <!-- Menu mobile button -->
+    <button class="md:hidden p-2">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <!-- Icons -->
+    <div class="flex items-center gap-3 md:gap-4">
+        <button><img src="public/notification.png" class="h-5 md:h-6 opacity-80 hover:opacity-100 transition-opacity duration-300"></button>
+        <button><img src="public/parametres.png" class="h-5 md:h-6 opacity-80 hover:opacity-100 transition-opacity duration-300"></button>
+        <img src="public/user.png" class="h-10 w-10 md:h-12 md:w-14 rounded-full border-2 border-accent" alt="User">
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="px-4 md:px-8 lg:px-12 py-6 md:py-10 max-w-6xl mx-auto">
+    
+    <!-- Page Header -->
+    <div class="mb-8 md:mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold bg-textgreen">Reminders & Notifications</h1>
+        <p class="text-textblue1 mt-2 text-lg">Stay updated with your study schedule and activities</p>
+    </div>
+
+    <!-- Single Column Layout -->
+    <div class="space-y-6 md:space-y-8">
+        
+        <!-- Motivation Card -->
+        <div class="bg-gradient-to-r from-secondary/20 to-accent-30 p-6 md:p-8 rounded-2xl shadow-lg border border-secondary/30">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold p">You're doing great this week!</h2>
+                    <p class="text-darkgreen mt-2 text-lg">Keep up the momentum with your studies</p>
+                </div>
+                <button class="button2 px-6 py-3 text-lg font-semibold hover:scale-105 transition-all duration-300">
+                    View Progress >
+                </button>
+            </div>
+            <div class="mt-6 pt-6 border-t border-secondary/30">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-textblue1 font-medium">Study Hours This Week</p>
+                        <p class="text-2xl font-bold text-darkgreen">14.5 hours</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-textblue1 font-medium">Completion Rate</p>
+                        <p class="text-2xl font-bold text-darkgreen">78%</p>
+                    </div>
+                </div>
+                <!-- Progress Bar -->
+                <div class="mt-4">
+                    <div class="h-3 bg-back-4 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-secondary to-b-end rounded-full" style="width: 78%"></div>
+                    </div>
+                    <div class="flex justify-between mt-2 text-sm text-textblue1">
+                        <span>0%</span>
+                        <span>78%</span>
+                        <span>100%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notifications List -->
+        <div class="space-y-6">
+            
+            <!-- Conflict Detected -->
+            <div class="bg-bgCard p-6 rounded-2xl shadow-xl border border-accent/30">
+                <div class="flex items-start gap-4">
+                    <div class="h-12 w-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                        <span class="text-2xl">⚠️</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                            <h3 class="text-xl font-bold text-accent">Conflict Detected</h3>
+                            <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">Urgent</span>
+                        </div>
+                        <p class="text-text mt-2">Your study group session conflicts with your "Advanced Calculus" class scheduled at the same time.</p>
+                        <div class="mt-4 flex flex-wrap gap-3">
+                            <button class="px-5 py-2 bg-accent text-light rounded-xl font-semibold hover:bg-accent/90 transition-colors duration-300">
+                                Manage Conflict >
+                            </button>
+                            <button class="px-5 py-2 bg-back-4 text-text rounded-xl font-semibold hover:bg-session1 transition-colors duration-300">
+                                View Schedule
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-accent/20">
+                    <div class="flex flex-wrap gap-4 text-sm">
+                        <div class="flex items-center gap-2">
+                            <span class="text-textblue1">Date:</span>
+                            <span class="font-medium">Tomorrow, 2:00 PM</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-textblue1">Duration:</span>
+                            <span class="font-medium">2 hours</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-textblue1">Affected:</span>
+                            <span class="font-medium">Math Study Group</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Study Group -->
+            <div class="bg-bgCard p-6 rounded-2xl shadow-xl border border-secondary/30">
+                <div class="flex items-start gap-4">
+                    <div class="h-12 w-12 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                        <span class="text-2xl">⏰</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                            <h3 class="text-xl font-bold text-secondary">Study Group Starting Soon</h3>
+                            <span class="px-3 py-1 bg-secondary/10 text-darkgreen rounded-full text-sm font-medium">In 15 min</span>
+                        </div>
+                        <p class="text-text mt-2">Your "Probability" study group will start in 15 minutes. Prepare your materials and join your group mates.</p>
+                        <div class="mt-4 flex flex-wrap gap-3">
+                            <button class="button2 px-5 py-2 rounded-xl font-semibold hover:scale-105 transition-all duration-300">
+                                Join Your Group >
+                            </button>
+                            <button class="px-5 py-2 bg-back-4 text-text rounded-xl font-semibold hover:bg-session1 transition-colors duration-300">
+                                View Details
+                            </button>
+                            <button class="px-5 py-2 bg-back-4 text-text rounded-xl font-semibold hover:bg-session1 transition-colors duration-300">
+                                Snooze (10 min)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-secondary/20">
+                    <div class="flex flex-wrap gap-4 text-sm">
+                        <div class="flex items-center gap-2">
+                            <span class="text-textblue1">Topic:</span>
+                            <span class="font-medium">Probability & Statistics</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-textblue1">Location:</span>
+                            <span class="font-medium">Bloc G Esprit, Room 204</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-textblue1">Participants:</span>
+                            <span class="font-medium">4 confirmed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Notifications -->
+            <div class="bg-bgCard p-6 rounded-2xl shadow-xl border border-secondary/20">
+                <h3 class="text-xl font-bold bg-textgreen mb-4">Recent Notifications</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 p-3 bg-back-4 rounded-xl hover:bg-session1 transition-colors duration-300">
+                        <div class="h-10 w-10 rounded-full bg-secondary/20 flex items-center justify-center">
+                            <span>📚</span>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium text-text">Alex Johnson confirmed participation in Math Study Group</p>
+                            <p class="text-sm text-textblue1">2 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-back-4 rounded-xl hover:bg-session1 transition-colors duration-300">
+                        <div class="h-10 w-10 rounded-full bg-accent/20 flex items-center justify-center">
+                            <span>🎯</span>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium text-text">Focus session completed: 45 minutes of concentrated study</p>
+                            <p class="text-sm text-textblue1">5 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-back-4 rounded-xl hover:bg-session1 transition-colors duration-300">
+                        <div class="h-10 w-10 rounded-full bg-footer-30 flex items-center justify-center">
+                            <span>👥</span>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-medium text-text">New study group match found: "Advanced Algorithms"</p>
+                            <p class="text-sm text-textblue1">1 day ago</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="w-full mt-4 py-3 bg-back-4 text-text rounded-xl font-medium hover:bg-session1 transition-colors duration-300 flex items-center justify-center gap-2">
+                    <span>View All Notifications</span>
+                    <span>→</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- VOTRE FOOTER -->
+<footer class="px-6 md:px-10 py-10 bg-footer text-light">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+        <!-- Logo + description -->
+        <div>
+            <img src="public/logo1.png" class="h-12 md:h-16 mb-4">
+            <p class="max-w-xs text-gray-300">
+                Connecting students worldwide to learn and grow together.
+            </p>
+        </div>
+
+        <!-- Quick links -->
+        <div>
+            <h3 class="text-xl font-semibold mb-2">Quick Links</h3>
+            <ul class="space-y-1 text-gray-300">
+                <li><a href="#" class="hover:text-accent transition-colors duration-300">Home</a></li>
+                <li><a href="#" class="hover:text-accent transition-colors duration-300">About Us</a></li>
+                <li><a href="#" class="hover:text-accent transition-colors duration-300">How It Works</a></li>
+                <li><a href="#" class="hover:text-accent transition-colors duration-300">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+            <h3 class="text-xl font-semibold mb-2">Resources</h3>
+            <ul class="space-y-1 text-gray-300">
+                <li><a href="#" class="hover:text-accent transition-colors duration-300">Help Center</a></li>
+                <li><a href="#" class="hover:text-accent transition-colors duration-300">Privacy Policy</a></li>
+                <li><a href="#" class="hover:text-accent transition-colors duration-300">Terms of Service</a></li>
+                <li><a href="#" class="hover:text-accent transition-colors duration-300">FAQs</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+            <h3 class="text-xl font-semibold mb-2">Get in Touch</h3>
+            <p class="text-gray-300 mb-3">hello@esprit2peer.com</p>
+
+            <div class="flex gap-4">
+                <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                    <img src="public/facebook.png" class="h-6" alt="Facebook">
+                </a>
+                <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                    <img src="public/instagram.png" class="h-6" alt="Instagram">
+                </a>
+                <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                    <img src="public/twitter.png" class="h-6" alt="Twitter">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <p class="text-center text-gray-400 mt-10">
+        © 2025 Esprit2Peer. All Rights Reserved.
+    </p>
+</footer>
+
+</body>
+</html>
