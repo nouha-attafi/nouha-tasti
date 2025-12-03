@@ -1,9 +1,9 @@
-/* ===== ALAÂ + TEAM GLOBAL STYLES (FINAL MERGED WITH NEW MEMBER) ===== */
+/* ===== GLOBAL + TEAM GLOBAL STYLES (FINAL MERGED) ===== */
 
 /* Tailwind import (only once) */
 @import "tailwindcss";
 
-/* ===== Global CSS Variables (YOURS DOMINATE + New Member variables appended safely) ===== */
+/* ===== CSS Variables (no duplicates, no overrides) ===== */
 :root {
   --color-primary: #fdfbee;
   --color-secondary: #57B4BA;
@@ -17,18 +17,21 @@
   --footer-bg-30: rgba(37, 184, 184, 0.3);
   --color-text: #000000;
   --color-background: rgba(255, 255, 255, 0.4);
+
   --color-button1-start: rgba(254, 79, 45, 0.56);
   --color-button1-end: rgba(255, 54, 14, 1);
+
   --color-p-start: #32B4AE;
   --color-p-end: #FE4F2D;
+
   --color-b-satart: #57B4BA;
   --color-b-end: #10B981;
-  --color-tags: rgba(229, 233, 235, 0.623);
+
   --color-backgroundSession: rgba(254, 79, 45, 0.61);
   --color-backgroundSession1: rgba(0, 74, 74, 0.15);
   --color-star-active: #FBBF24;
 
-  /* ===== NEW MEMBER ADDED VARIABLES (appended safely) ===== */
+  /* NEW MEMBER appended vars */
   --color-textgray: rgb(0, 0, 0, 0.34);
   --color-backgroundicon: #D9D9D9;
   --color-progress-bar: #fecaca;
@@ -37,7 +40,6 @@
   --color-task-complete: #22c55e;
   --color-task-pending: #eab308;
   --color-card-strong: #ffffff;
-  --color-card-strong: #ffffff; /* same value, no conflict impact */
 }
 
 /* ===== Tailwind layers (only once, preserved) ===== */
@@ -45,7 +47,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== Custom utility classes (Your file is the foundation) ===== */
+/* ===== Utility classes ===== */
 .bg-primary { background-color: var(--color-primary); }
 .bg-secondary { background-color: var(--color-secondary); }
 .bg-accent { background-color: var(--color-accent); }
@@ -55,21 +57,17 @@
 .bg-textdark { color: var(--color-text); }
 .bg-textblue1 { color: var(--color-textblue); }
 .bg-textgreen { color: var(--color-darkgreen); }
-
-.text-primary { color: var(--color-primary); }
-.text-secondary { color: var(--color-secondary); }
-.text-accent { color: var(--color-accent); }
+.bg-text-gray { color: var(--color-textgray); }
 
 .bg-footer { background-color: var(--footer-bg); }
 .bg-footer-30 { background-color: var(--footer-bg-30); }
-.border-primary { border-color: var(--color-primary); }
-
 .bg-accent-30 { background-color: var(--color-accent-30); }
 .bg-back-4 { background-color: var(--color-background); }
 .bg-bgCard { background-color: var(--color-card); }
-
 .bg-session { background-color: var(--color-backgroundSession); }
 .bg-session1 { background-color: var(--color-backgroundSession1); }
+.bg-progress { background-color: var(--color-progress-bar); }
+.bg-card-strong { background-color: var(--color-card-strong); }
 
 .nav-gap-51 { display: flex; gap: 51px; }
 
@@ -89,7 +87,7 @@
   );
 }
 
-/* ===== Buttons (Your version kept, theirs not overriding) ===== */
+/* ===== Buttons ===== */
 .button {
   background: linear-gradient(to right, var(--color-button1-start), var(--color-button1-end));
   color: white;
@@ -112,7 +110,7 @@
 
 .button2:hover { opacity: 0.9; }
 
-/* ===== Gradient text class (kept from your file) ===== */
+/* ===== Gradient text ===== */
 .p {
   background: linear-gradient(to right, var(--color-p-start), var(--color-p-end));
   -webkit-background-clip: text;
@@ -121,21 +119,28 @@
   color: transparent;
 }
 
-/* ===== Star Rating System (preserved) ===== */
+/* ===== Star Rating System ===== */
 .star-rating-container { display: flex; gap: 0.25rem; }
-.star-icon { cursor: pointer; color: #E5E7EB; transition: color 0.2s ease; font-size: 1.875rem; }
-.star-icon.active, .star-icon:hover, .star-rating-container:hover .star-icon { color: var(--color-star-active); }
-.star-rating-container .star-icon:hover ~ .star-icon { color: #E5E7EB; }
+.star-icon {
+  cursor: pointer;
+  color: #E5E7EB;
+  transition: color 0.2s ease;
+  font-size: 1.875rem;
+}
+.star-icon.active, .star-icon:hover, .star-rating-container:hover .star-icon {
+  color: var(--color-star-active);
+}
+.star-rating-container .star-icon:hover ~ .star-icon {
+  color: #E5E7EB;
+}
 
-/* ===== Modal Styles (fully preserved, no overwrite) ===== */
-.modal-overlay { background-color: rgba(0,0,0,0.7); }
-
+/* ===== Modal Styles ===== */
+.modal-overlay { background-color: rgba(0, 0, 0, 0.7); }
 .modal-content {
   background-color: white;
   border-radius: 0.75rem;
   box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
 }
-
 .modal-header { border-bottom-color: #E5E7EB; }
 .dark .modal-header { border-bottom-color: #374151; }
 .modal-text-secondary { color: #4B5563; }
@@ -147,7 +152,6 @@
 .dark .modal-close { color: #D1D5DB; }
 .dark .modal-close:hover { color: #F9FAFB; }
 
-/* ===== Pie Chart / Card Visuals (preserved) ===== */
 .pie-chart {
   width: 160px;
   height: 160px;
@@ -160,13 +164,30 @@
 }
 .card-bg { background-color: var(--color-background); backdrop-filter: blur(10px); }
 
-/* ===== Icons fix (preserved) ===== */
+/* ===== Icons Fix ===== */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   font-size: inherit;
 }
 
-/* ===== Responsive Containers (preserved) ===== */
+/* ===== Responsive containers ===== */
+@media (max-width: 768px) {
+  .container-narrow { max-width: 100%; padding-left: 1rem; padding-right: 1rem; }
+  .toggle-switch { width: 50px; height: 25px; }
+  .toggle-slider:before { height: 18px; width: 18px; left: 3px; bottom: 3px; }
+  input:checked + .toggle-slider:before { transform: translateX(25px); }
+  .custom-checkbox { width: 18px; height: 18px; }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container-narrow { max-width: 90%; margin-left: auto; margin-right: auto; }
+}
+
+@media (min-width: 1024px) {
+  .container-narrow { max-width: 80%; margin-left: auto; margin-right: auto; }
+}
+
+/* ===== Teammate responsive container variants ===== */
 @media (max-width: 768px) {
   .container-narrow { max-width: 100%; padding-left: 1rem; padding-right: 1rem; }
 }
@@ -179,8 +200,7 @@
   .container-narrow { max-width: 80%; margin-left: auto; margin-right: auto; }
 }
 
-/* ===== NEW MEMBER ADDED STYLES (NOT OVERRIDING YOURS) ===== */
-.bg-text-gray { color: var(--color-textgray); }
+/* ===== Recent member styles appended safely ===== */
 .bg-icon { background-color: var(--color-backgroundicon); }
 
 .bg-new-icon-style {
@@ -203,3 +223,15 @@
 
 .text-task-complete { color: var(--color-task-complete); }
 .text-task-pending { color: var(--color-task-pending); }
+
+/* extra transitions */
+.transition-all { transition: all 0.3s ease; }
+.transition-colors {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.transition-opacity { transition: opacity 0.3s ease; }
+.transition-transform { transition: transform 0.3s ease; }
+.hover\:scale-105:hover { transform: scale(1.05); }
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+}
