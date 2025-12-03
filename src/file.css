@@ -1,3 +1,6 @@
+/*alaa styles start here*/
+
+
 @import "tailwindcss";
 /* Variables globales */
 :root {
@@ -198,3 +201,4 @@
 .dark .modal-close:hover {
   color: #F9FAFB; /* text-dark-primary */
 }
+/*alaa styles here */
