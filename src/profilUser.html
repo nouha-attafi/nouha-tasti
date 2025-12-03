@@ -9,57 +9,83 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 </head>
-<body class="bg-primary   text-text font-sans" >
+<body class="bg-primary text-text min-h-screen">
 
-  <!-- HEADER identique -->
-  <header class="flex justify-between items-center px-8 py-4 bg-footer rounded-xl mx-12 mt-4 shadow-md">
-    <img src="public/logo.png" class="h-12" alt="Logo">
-    <nav class="hidden md:flex nav-gap-51 text-white text-lg font-regular">
-      <a href="#" class="hover:text-orange-400">Home</a>
-      <a href="#" class="hover:text-orange-400">Planner</a>
-      <a href="#" class="hover:text-orange-400">Matchmaking</a>
-      <a href="#" class="hover:text-orange-400">Focus</a>
-      <a href="#" class="text-orange-400">Analytics</a>
-      <a href="#" class="hover:text-orange-400">Forum</a>
+  <!-- UPDATED HEADER WITH MOBILE MENU (from Alaa's page) -->
+  <header class="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 bg-footer rounded-xl mx-4 sm:mx-8 lg:mx-12 mt-4 shadow-md">
+    <img src="public/logo.png" class="h-10 sm:h-12" alt="Logo">
+    <nav class="hidden lg:flex gap-6 xl:gap-8 text-white text-lg font-regular">
+      <a href="/src/home.html" class="hover:text-orange-400">Home</a>
+      <a href="/src/calandar2.html" class="hover:text-orange-400">Planner</a>
+      <a href="/src/matchmaking.html" class="hover:text-orange-400">Matchmaking</a>
+      <a href="/src/joinsession.html" class="hover:text-orange-400">Focus</a>
+      <a href="/src/Analytics.html" class="hover:text-orange-400">Analytics</a>
+      <a href="/src/forum.html" class="hover:text-orange-400">Forum</a>
     </nav>
-    <div class="flex items-center gap-5">
-      <button class="text-white hover:text-orange-300 transition">
-        <span class="material-symbols-outlined text-3xl">notifications</span>
+    <div class="flex items-center gap-3 sm:gap-5">
+      <button class="text-white hover:text-orange-300 transition hidden sm:block">
+        <span class="material-symbols-outlined text-2xl sm:text-3xl">notifications</span>
       </button>
-      <button class="text-white hover:text-orange-300 transition">
-        <span class="material-symbols-outlined text-3xl">settings</span>
+      <button class="text-white hover:text-orange-300 transition hidden sm:block">
+        <span class="material-symbols-outlined text-2xl sm:text-3xl">settings</span>
       </button>
-      <img src="public/f2.png" alt="User Avatar" class="h-11 w-11 rounded-full object-cover ">
+      <a href="/src/profilUser.html">
+        <img src="public/f2.png" 
+             alt="User Avatar" 
+             class="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover cursor-pointer hover:opacity-80 transition">
+      </a>
+      <button id="mobile-menu-button" class="lg:hidden text-white">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+  <!-- MOBILE MENU (from Alaa's page) -->
+  <div id="mobile-menu" class="mobile-menu lg:hidden bg-footer rounded-xl mx-4 sm:mx-8 mt-2 px-6 py-4 hidden">
+    <nav class="flex flex-col gap-4 text-white">
+      <a href="/src/home.html" class="hover:text-orange-400 py-2">Home</a>
+      <a href="/src/calandar2.html" class="hover:text-orange-400 py-2">Planner</a>
+      <a href="/src/matchmaking.html" class="hover:text-orange-400 py-2">Matchmaking</a>
+      <a href="/src/joinsession.html" class="hover:text-orange-400 py-2">Focus</a>
+      <a href="/src/Analytics.html" class="hover:text-orange-400 py-2">Analytics</a>
+      <a href="/src/forum.html" class="hover:text-orange-400 py-2">Forum</a>
+    </nav>
+    <div class="flex justify-center gap-6 mt-4 sm:hidden">
+      <button class="text-white hover:text-orange-300 transition">
+        <span class="material-symbols-outlined text-2xl">notifications</span>
+      </button>
+      <button class="text-white hover:text-orange-300 transition">
+        <span class="material-symbols-outlined text-2xl">settings</span>
+      </button>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 lg:py-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
     <div class="lg:col-span-8 space-y-8">
 
       <!-- LA SEULE CHOSE MODIFIÉE : LES 2 CARTES SONT FUSIONNÉES EN UNE SEULE -->
-      <div class="bg-white rounded-3xl shadow-lg p-8">
+      <div class="bg-white rounded-2xl lg:rounded-3xl shadow-lg p-6 lg:p-8">
 
         <!-- 1. Profil + compétences (exactement comme avant) -->
         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-          <img src="public/f2.png" alt="Sarah" class="h-24 w-24 rounded-full ">
+          <img src="public/f2.png" alt="Sarah" class="h-20 w-20 lg:h-24 lg:w-24 rounded-full">
           <div class="text-center sm:text-left">
             <div class="flex items-center gap-2 justify-center sm:justify-start">
-              <h1 class="text-2xl font-semibold text-gray-900">Sarah Johnson</h1>
+              <h1 class="text-xl lg:text-2xl font-semibold text-gray-900">Sarah Johnson</h1>
               <span class="text-green-500 text-xl"><span class="material-symbols-outlined">verified</span></span>
             </div>
-            <p class="text-gray-600">sarah.johnson@email.com</p>
-            <span class="inline-block mt-3 bg-red-500 text-white px-4 py-1.5 rounded-full text-sm ">4TWIN6</span>
+            <p class="text-gray-600 text-sm lg:text-base">sarah.johnson@email.com</p>
+            <span class="inline-block mt-3 bg-red-500 text-white px-4 py-1.5 rounded-full text-sm">4TWIN6</span>
           </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-8 mt-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mt-8 lg:mt-10">
           <div>
             <div class="flex justify-between mb-2">
-              <span class="font-medium text-gray-700">Java</span>
-              <span class=" text-black">100%</span>
+              <span class="font-medium text-gray-700 text-sm lg:text-base">Java</span>
+              <span class="text-black text-sm lg:text-base">100%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-3">
               <div class="bg-gradient-to-r from-orange-500 to-red-600 h-3 rounded-full" style="width:100%"></div>
@@ -67,8 +93,8 @@
           </div>
           <div>
             <div class="flex justify-between mb-2">
-              <span class="font-medium text-gray-700">Administration</span>
-              <span class=" text-black">100%</span>
+              <span class="font-medium text-gray-700 text-sm lg:text-base">Administration</span>
+              <span class="text-black text-sm lg:text-base">100%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-3">
               <div class="bg-gradient-to-r from-orange-500 to-red-600 h-3 rounded-full" style="width:100%"></div>
@@ -76,18 +102,15 @@
           </div>
         </div>
 
- 
-        <div class="mt-10 flex flex-col sm:flex-row justify-between items-center gap-6">
-           <div class="text-center">
-          <div>
-            <h3 class="text-xl font-semibold text-gray-800">Favorite Study Time</h3>
-            <p class="text-2xl font- text-gray-900 mt-2">5:45 PM</p>
-            <p class="text-gray-600">Evening sessions</p>
+        <div class="mt-8 lg:mt-10 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <div class="text-center">
+            <h3 class="text-lg lg:text-xl font-semibold text-gray-800">Favorite Study Time</h3>
+            <p class="text-2xl lg:text-3xl font-bold text-gray-900 mt-2">5:45 PM</p>
+            <p class="text-gray-600 text-sm lg:text-base">Evening sessions</p>
           </div>
-          </div>
-          <div class="flex gap-4">
-            <button class="button2 px-14 py-1 rounded-full text-white">Edit</button>
-            <button class="button bg-accent text-white px-14 py-2 rounded-full hover:bg-orange-600 ">Save</button>
+          <div class="flex gap-4 w-full sm:w-auto">
+            <button class="button2 px-6 lg:px-14 py-2 lg:py-3 rounded-full text-white text-sm lg:text-base flex-1 sm:flex-none">Edit</button>
+            <button class="button bg-accent text-white px-6 lg:px-14 py-2 lg:py-3 rounded-full hover:bg-orange-600 text-sm lg:text-base flex-1 sm:flex-none">Save</button>
           </div>
         </div>
 
@@ -95,178 +118,183 @@
       <!-- FIN DE LA CARTE FUSIONNÉE -->
 
       <!-- Tout le reste 100 % identique à ton code original -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-3xl shadow-lg p-8">
-          <h3 class="text-xl font-semibold text-gray-800 mb-6">Matched Partners This Week</h3>
-          <div class="space-y-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div class="bg-white rounded-2xl lg:rounded-3xl shadow-lg p-6 lg:p-8">
+          <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-4 lg:mb-6">Matched Partners This Week</h3>
+          <div class="space-y-4 lg:space-y-5">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <img src="public/f1.png" class="h-12 w-12 rounded-full" alt="Medamine">
-                <span class="font-medium">Medamine</span>
+                <img src="public/f1.png" class="h-10 w-10 lg:h-12 lg:w-12 rounded-full" alt="Medamine">
+                <span class="font-medium text-sm lg:text-base">Medamine</span>
               </div>
-        <button class="button2 text-sm px-5 py-2.5 rounded-full ">view profile</button>
+              <button class="button2 text-xs lg:text-sm px-4 lg:px-5 py-2 lg:py-2.5 rounded-full">view profile</button>
             </div>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <img src="public/f2.png" class="h-12 w-12 rounded-full" alt="Meriam">
-                <span class="font-medium">Meriam</span>
+                <img src="public/f2.png" class="h-10 w-10 lg:h-12 lg:w-12 rounded-full" alt="Meriam">
+                <span class="font-medium text-sm lg:text-base">Meriam</span>
               </div>
-              <button class="button2 text-sm px-5 py-2.5 rounded-full ">view profile</button>
+              <button class="button2 text-xs lg:text-sm px-4 lg:px-5 py-2 lg:py-2.5 rounded-full">view profile</button>
             </div>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <img src="public/f3.png" class="h-12 w-12 rounded-full" alt="Nouha">
-                <span class="font-medium">Nouha</span>
+                <img src="public/f3.png" class="h-10 w-10 lg:h-12 lg:w-12 rounded-full" alt="Nouha">
+                <span class="font-medium text-sm lg:text-base">Nouha</span>
               </div>
-              <button class="button2 text-sm px-5 py-2.5 rounded-full ">view profile</button>
+              <button class="button2 text-xs lg:text-sm px-4 lg:px-5 py-2 lg:py-2.5 rounded-full">view profile</button>
             </div>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <img src="public/f4.png" class="h-12 w-12 rounded-full" alt="Alaa">
-                <span class="font-medium">Alaa</span>
+                <img src="public/f4.png" class="h-10 w-10 lg:h-12 lg:w-12 rounded-full" alt="Alaa">
+                <span class="font-medium text-sm lg:text-base">Alaa</span>
               </div>
-              <button class="button2 text-sm px-5 py-2.5 rounded-full ">view profile</button>
+              <button class="button2 text-xs lg:text-sm px-4 lg:px-5 py-2 lg:py-2.5 rounded-full">view profile</button>
             </div>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <img src="public/f5.png" class="h-12 w-12 rounded-full" alt="Achraf">
-                <span class="font-medium">Achraf</span>
+                <img src="public/f5.png" class="h-10 w-10 lg:h-12 lg:w-12 rounded-full" alt="Achraf">
+                <span class="font-medium text-sm lg:text-base">Achraf</span>
               </div>
-              <button class="button2 text-sm px-5 py-2.5 rounded-full ">view profile</button>
+              <button class="button2 text-xs lg:text-sm px-4 lg:px-5 py-2 lg:py-2.5 rounded-full">view profile</button>
             </div>
           </div>
-          <div class="text-center mt-6">
-            <a href="feedback.html" class="text-accent  hover:underline">View more</a>
+          <div class="text-center mt-4 lg:mt-6">
+            <a href="feedback.html" class="text-accent hover:underline text-sm lg:text-base">View more</a>
           </div>
         </div>
 
-        <div class="bg-white rounded-3xl shadow-lg p-8">
-          <h3 class="text-xl font-semibold text-gray-800 mb-6">Analytics</h3>
-          <div class="space-y-6">
+        <div class="bg-white rounded-2xl lg:rounded-3xl shadow-lg p-6 lg:p-8">
+          <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-4 lg:mb-6">Analytics</h3>
+          <div class="space-y-4 lg:space-y-6">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <div class="p-3 bg-blue-100 rounded-full"><span class="material-icons text-blue-600">visibility</span></div>
+                <div class="p-2 lg:p-3 bg-blue-100 rounded-full"><span class="material-icons text-blue-600 text-lg lg:text-xl">visibility</span></div>
                 <div>
-                  <p class="text-3xl  font-semibold">32</p>
-                  <p class="text-gray-600">Profile Views</p>
+                  <p class="text-2xl lg:text-3xl font-semibold">32</p>
+                  <p class="text-gray-600 text-sm lg:text-base">Profile Views</p>
                 </div>
               </div>
             </div>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <div class="p-3 bg-green-100 rounded-full"><span class="material-icons text-green-600">chat_bubble</span></div>
+                <div class="p-2 lg:p-3 bg-green-100 rounded-full"><span class="material-icons text-green-600 text-lg lg:text-xl">chat_bubble</span></div>
                 <div>
-                  <p class="text-3xl font-semibold">17</p>
-                  <p class="text-gray-600">Interactions</p>
+                  <p class="text-2xl lg:text-3xl font-semibold">17</p>
+                  <p class="text-gray-600 text-sm lg:text-base">Interactions</p>
                 </div>
               </div>
             </div>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <div class="p-3 bg-red-100 rounded-full"><span class="material-icons text-red-600">favorite</span></div>
+                <div class="p-2 lg:p-3 bg-red-100 rounded-full"><span class="material-icons text-red-600 text-lg lg:text-xl">favorite</span></div>
                 <div>
-                  <p class="text-3xl font-semibold">22</p>
-                  <p class="text-gray-600">Match Acceptances</p>
+                  <p class="text-2xl lg:text-3xl font-semibold">22</p>
+                  <p class="text-gray-600 text-sm lg:text-base">Match Acceptances</p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="text-center mt-8">
-            <a href="#" class="text-accent   hover:underline">Show all analytics</a>
+          <div class="text-center mt-6 lg:mt-8">
+            <a href="#" class="text-accent hover:underline text-sm lg:text-base">Show all analytics</a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- SIDEBAR DROITE identique -->
-    <div class="lg:col-span-4 space-y-8">
-      <div class="bg-white rounded-3xl shadow-lg p-8">
-        <h3 class="text-xl font-semibold text-gray-800 mb-6">Profile Settings</h3>
-        <div class="space-y-5 text-gray-700">
+    <div class="lg:col-span-4 space-y-6 lg:space-y-8">
+      <div class="bg-white rounded-2xl lg:rounded-3xl shadow-lg p-6 lg:p-8">
+        <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-4 lg:mb-6">Profile Settings</h3>
+        <div class="space-y-4 lg:space-y-5 text-gray-700 text-sm lg:text-base">
           <div class="flex justify-between"><span>Profile Language</span><span class="font-medium">English</span></div>
           <div class="flex justify-between"><span>Public Profile URL</span><a href="#" class="text-accent hover:underline">studybuddy.com/sarah-johnson</a></div>
         </div>
       </div>
 
-      <div class="bg-white rounded-3xl shadow-lg p-8">
-        <h3 class="text-xl font-semibold text-gray-800 mb-4">About Me</h3>
-        <p class="text-gray-700 leading-relaxed">
+      <div class="bg-white rounded-2xl lg:rounded-3xl shadow-lg p-6 lg:p-8">
+        <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-3 lg:mb-4">About Me</h3>
+        <p class="text-gray-700 leading-relaxed text-sm lg:text-base">
           2nd-year CS student. Need a real study buddy who actually shows up. Daily Pomodoro, Anki, no flakes. Let's ace this semester together.
         </p>
       </div>
 
-      <div class="bg-white rounded-3xl shadow-lg p-8 flex justify-between items-center">
-        <div>
-          <h3 class="text-xl font-semibold text-gray-800">Streaks</h3>
-          <div class="flex items-center gap-4 mt-4">
-            <span class="text-4xl text-orange-500">🔥</span>
-            <span class="text-4xl font-black font-semibold text-orange-600">10</span>
+      <div class="bg-white rounded-2xl lg:rounded-3xl shadow-lg p-6 lg:p-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="text-center sm:text-left">
+          <h3 class="text-lg lg:text-xl font-semibold text-gray-800">Streaks</h3>
+          <div class="flex items-center justify-center sm:justify-start gap-4 mt-3 lg:mt-4">
+            <span class="text-3xl lg:text-4xl text-orange-500">🔥</span>
+            <span class="text-3xl lg:text-4xl font-black font-semibold text-orange-600">10</span>
           </div>
-          <p class="text-gray-600 mt-2 ">You have 10 streaks this week</p>
+          <p class="text-gray-600 mt-2 text-sm lg:text-base">You have 10 streaks this week</p>
         </div>
-        <button class="button bg-accent text-white px-8 py-2 rounded-full hover:bg-orange-600 ">View</button>
+        <button class="button bg-accent text-white px-6 lg:px-8 py-2 lg:py-3 rounded-full hover:bg-orange-600 text-sm lg:text-base mt-4 sm:mt-0">View</button>
       </div>
 
-      <div class="bg-white rounded-3xl shadow-lg p-8">
-        <h3 class="text-xl font-semibold text-gray-800 mb-4">Reviews</h3>
+      <div class="bg-white rounded-2xl lg:rounded-3xl shadow-lg p-6 lg:p-8">
+        <h3 class="text-lg lg:text-xl font-semibold text-gray-800 mb-3 lg:mb-4">Reviews</h3>
         <div class="flex items-center gap-3 mb-3">
-          <div class="flex text-yellow-500 text-xl">
+          <div class="flex text-yellow-500 text-lg lg:text-xl">
             <span class="material-icons">star</span><span class="material-icons">star</span>
             <span class="material-icons">star</span><span class="material-icons">star</span>
             <span class="material-icons">star</span>
           </div>
-          <span class="text-gray-600 mt-3">4.9 (24 reviews)</span>
+          <span class="text-gray-600 text-sm lg:text-base">4.9 (24 reviews)</span>
         </div>
-        <p class="italic text-gray-700">"Great study partner! Very knowledgeable and patient..."</p>
-        <p class="text-right text-sm text-gray-600 mt-3">— Alaa ben jeddi</p>
+        <p class="italic text-gray-700 text-sm lg:text-base">"Great study partner! Very knowledgeable and patient..."</p>
+        <p class="text-right text-xs lg:text-sm text-gray-600 mt-2 lg:mt-3">— Alaa ben jeddi</p>
       </div>
     </div>
   </main>
 
-  <!-- FOOTER identique -->
-  <footer class="bg-footer text-white mt-20">
-    <div class="max-w-7xl mx-auto px-10 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-        <div>
+  <!-- UPDATED FOOTER (from Alaa's page) -->
+  <footer class="bg-footer text-white mt-12 lg:mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 lg:py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div class="sm:col-span-2 lg:col-span-1">
           <div class="flex items-center gap-3">
-            <img src="public/logo1.png" alt="Logo" class="h-12">
-           
+            <img src="public/logo1.png" alt="Logo" class="h-10 lg:h-12">
           </div>
-          <p class="mt-4 text-gray-300 text-sm">Connecting students worldwide to achieve academic excellence together.</p>
+          <p class="mt-3 lg:mt-4 text-gray-300 text-sm">Connecting students worldwide to achieve academic excellence together.</p>
         </div>
         <div>
-          <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
-          <ul class="space-y-2 text-sm text-gray-300">
-            <li><a href="#" class="hover:text-accent">Home</a></li>
-            <li><a href="#" class="hover:text-accent">About Us</a></li>
-            <li><a href="#" class="hover:text-accent">How It Works</a></li>
-            <li><a href="#" class="hover:text-accent">Contact</a></li>
+          <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Quick Links</h4>
+          <ul class="space-y-1 lg:space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-orange-400">Home</a></li>
+            <li><a href="#" class="hover:text-orange-400">About Us</a></li>
+            <li><a href="#" class="hover:text-orange-400">How It Works</a></li>
+            <li><a href="#" class="hover:text-orange-400">Contact</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-lg mb-4">Resources</h4>
-          <ul class="space-y-2 text-sm text-gray-300">
-            <li><a href="#" class="hover:text-accent">Help Center</a></li>
-            <li><a href="#" class="hover:text-accent">Privacy Policy</a></li>
-            <li><a href="#" class="hover:text-accent">Terms of Service</a></li>
-            <li><a href="#" class="hover:text-accent">FAQs</a></li>
+          <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Resources</h4>
+          <ul class="space-y-1 lg:space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-orange-400">Help Center</a></li>
+            <li><a href="#" class="hover:text-orange-400">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-orange-400">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-orange-400">FAQs</a></li>
           </ul>
         </div>
-        <div>
-          <h4 class="font-semibold text-lg mb-4">Get in Touch</h4>
-          <p class="text-gray-300 mb-6">hello@esprit2peer.com</p>
-          <div class="flex gap-6">
-            <img src="public/facebook.png" class="h-8" alt="FB">
-            <img src="public/instagram.png" class="h-8" alt="IG">
-            <img src="public/twitter.png" class="h-8" alt="TW">
+        <div class="sm:col-span-2 lg:col-span-1">
+          <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Get in Touch</h4>
+          <p class="text-gray-300 mb-4 lg:mb-6 text-sm">hello@esprit2peer.com</p>
+          <div class="flex gap-4 lg:gap-6">
+            <img src="public/facebook.png" class="h-7 lg:h-8" alt="FB">
+            <img src="public/instagram.png" class="h-7 lg:h-8" alt="IG">
+            <img src="public/twitter.png" class="h-7 lg:h-8" alt="TW">
           </div>
         </div>
       </div>
-      <div class="text-center text-gray-400 text-sm mt-12 pt-8 border-t border-gray-700">
+      <div class="text-center text-gray-400 text-xs lg:text-sm mt-8 lg:mt-12 pt-6 lg:pt-8 border-t border-gray-700">
         © 2025 Esprit2Peer. All rights reserved. Made with Love for students
       </div>
     </div>
   </footer>
 
+  <!-- Mobile menu script -->
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>

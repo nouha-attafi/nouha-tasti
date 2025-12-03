@@ -2,37 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Esprit2Peer - Analytics</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="file.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
 </head>
+<body class="bg-primary text-text min-h-screen">
 
-<body class="bg-primary text-text font-sans">
-
-  <!-- Header repris du template principal -->
-  <header class="flex justify-between items-center px-8 py-4 bg-footer rounded-xl mx-12 mt-4 shadow-md">
-    <img src="public/logo.png" class="h-12" alt="Logo">
-
-    <nav class="hidden md:flex nav-gap-51 text-white text-lg font-regular">
-      <a href="home.html" class="hover:text-orange-400">Home</a>
-      <a href="#" class="hover:text-orange-400">Planner</a>
-      <a href="joinsession.html" class="hover:text-orange-400">Match Making</a>
-      <a href="PubliqueSession1.html" class="hover:text-orange-400">Focus</a>
-      <a href="Analytics.html" class="hover:text-orange-400 underline underline-offset-4">Analytics</a>
-      <a href="PrivateSession.html" class="hover:text-orange-400">Forum</a>
+  <!-- HEADER & MOBILE MENU (100% identical to Sarah's page) -->
+  <header class="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 bg-footer rounded-xl mx-4 sm:mx-8 lg:mx-12 mt-4 shadow-md">
+    <img src="public/logo.png" class="h-10 sm:h-12" alt="Logo">
+    <nav class="hidden lg:flex gap-6 xl:gap-8 text-white text-lg font-regular">
+      <a href="/src/home.html" class="hover:text-orange-400">Home</a>
+      <a href="/src/calandar2.html" class="hover:text-orange-400">Planner</a>
+      <a href="/src/matchmaking.html" class="hover:text-orange-400">Matchmaking</a>
+      <a href="/src/joinsession.html" class="hover:text-orange-400">Focus</a>
+      <a href="/src/Analytics.html" class="text-orange-400">Analytics</a>
+      <a href="/src/forum.html" class="hover:text-orange-400">Forum</a>
     </nav>
-
-    <div class="flex items-center gap-4">
-      <button class="relative">
-        <img src="public/notification.png" class="h-6" alt="Notification">
+    <div class="flex items-center gap-3 sm:gap-5">
+      <button class="text-white hover:text-orange-300 transition hidden sm:block">
+        <span class="material-symbols-outlined text-2xl sm:text-3xl">notifications</span>
       </button>
-      <button class="relative">
-        <img src="public/parametres.png" class="h-6" alt="Settings">
+      <button class="text-white hover:text-orange-300 transition hidden sm:block">
+        <span class="material-symbols-outlined text-2xl sm:text-3xl">settings</span>
       </button>
-      <img src="public/user.png" class="h-12 w-14 rounded-full" alt="User">
+      <a href="/src/profilUser.html">
+        <img src="public/f2.png" 
+             alt="User Avatar" 
+             class="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover cursor-pointer hover:opacity-80 transition">
+      </a>
+      <button id="mobile-menu-button" class="lg:hidden text-white">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
     </div>
   </header>
+
+  <div id="mobile-menu" class="mobile-menu lg:hidden bg-footer rounded-xl mx-4 sm:mx-8 mt-2 px-6 py-4 hidden">
+    <nav class="flex flex-col gap-4 text-white">
+      <a href="/src/home.html" class="hover:text-orange-400 py-2">Home</a>
+      <a href="/src/calandar2.html" class="hover:text-orange-400 py-2">Planner</a>
+      <a href="/src//matchmaking.html" class="text-orange-400 py-2">Matchmaking</a>
+      <a href="/src/joinsession.html" class="hover:text-orange-400 py-2">Focus</a>
+      <a href="/src/Analytics.html" class="hover:text-orange-400 py-2">Analytics</a>
+      <a href="/src/forum.html" class="hover:text-orange-400 py-2">Forum</a>
+    </nav>
+    <div class="flex justify-center gap-6 mt-4 sm:hidden">
+      <button class="text-white hover:text-orange-300 transition">
+        <span class="material-symbols-outlined text-2xl">notifications</span>
+      </button>
+      <button class="text-white hover:text-orange-300 transition">
+        <span class="material-symbols-outlined text-2xl">settings</span>
+      </button>
+    </div>
+  </div>
 
   <!-- Main analytics content -->
   <main class="px-4 md:px-8 pt-10 pb-16">
@@ -44,302 +70,299 @@
       <!-- 3 cards layout -->
       <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
 
-      <!-- Daily Focus card -->
-      <article class="bg-bgCard rounded-3xl shadow-md p-6 md:p-7 flex flex-col">
-        <header class="mb-4">
-          <h2 class="text-xl font-semibold text-center tracking-wide">DAILY FOCUS</h2>
-        </header>
+        <!-- Daily Focus card -->
+        <article class="bg-bgCard rounded-3xl shadow-md p-6 md:p-7 flex flex-col">
+          <header class="mb-4">
+            <h2 class="text-xl font-semibold text-center tracking-wide">DAILY FOCUS</h2>
+          </header>
 
-        <div class="bg-back-4 rounded-2xl shadow-inner flex-1 p-5 mt-4 space-y-6 overflow-hidden">
-          <!-- Focus time chart (static SVG area chart) -->
-          <div>
-            <p class="text-sm font-semibold text-center mb-3">Focus Time (Hours)</p>
-            <div class="bg-white rounded-xl px-3 pt-3 pb-4">
-              <svg viewBox="0 0 300 160" class="w-full h-auto">
-                <!-- axes -->
-                <line x1="40" y1="20" x2="40" y2="140" stroke="#ddd" stroke-width="1" />
-                <line x1="40" y1="140" x2="280" y2="140" stroke="#ddd" stroke-width="1" />
+          <div class="bg-back-4 rounded-2xl shadow-inner flex-1 p-5 mt-4 space-y-6 overflow-hidden">
+            <!-- Focus time chart (static SVG area chart) -->
+            <div>
+              <p class="text-sm font-semibold text-center mb-3">Focus Time (Hours)</p>
+              <div class="bg-white rounded-xl px-3 pt-3 pb-4">
+                <svg viewBox="0 0 300 160" class="w-full h-auto">
+                  <!-- axes -->
+                  <line x1="40" y1="20" x2="40" y2="140" stroke="#ddd" stroke-width="1" />
+                  <line x1="40" y1="140" x2="280" y2="140" stroke="#ddd" stroke-width="1" />
 
-                <!-- y labels -->
-                <g font-size="8" fill="#555">
-                  <text x="28" y="135">0</text>
-                  <text x="20" y="110">25</text>
-                  <text x="20" y="85">50</text>
-                  <text x="20" y="60">75</text>
-                  <text x="16" y="35">100</text>
-                </g>
+                  <!-- y labels -->
+                  <g font-size="8" fill="#555">
+                    <text x="28" y="135">0</text>
+                    <text x="20" y="110">25</text>
+                    <text x="20" y="85">50</text>
+                    <text x="20" y="60">75</text>
+                    <text x="16" y="35">100</text>
+                  </g>
 
-                <!-- grid lines -->
-                <g stroke="#f3e3dd" stroke-width="1">
-                  <line x1="40" y1="110" x2="280" y2="110" />
-                  <line x1="40" y1="85" x2="280" y2="85" />
-                  <line x1="40" y1="60" x2="280" y2="60" />
-                  <line x1="40" y1="35" x2="280" y2="35" />
-                </g>
+                  <!-- grid lines -->
+                  <g stroke="#f3e3dd" stroke-width="1">
+                    <line x1="40" y1="110" x2="280" y2="110" />
+                    <line x1="40" y1="85" x2="280" y2="85" />
+                    <line x1="40" y1="60" x2="280" y2="60" />
+                    <line x1="40" y1="35" x2="280" y2="35" />
+                  </g>
 
-                <!-- area under line -->
-                <path
-                  d="M40 120 L80 105 L120 110 L160 95 L200 80 L240 60 L280 40 L280 140 L40 140 Z"
-                  fill="rgba(254,79,45,0.22)" />
+                  <!-- area under line -->
+                  <path
+                    d="M40 120 L80 105 L120 110 L160 95 L200 80 L240 60 L280 40 L280 140 L40 140 Z"
+                    fill="rgba(254,79,45,0.22)" />
 
-                <!-- line -->
-                <path
-                  d="M40 120 L80 105 L120 110 L160 95 L200 80 L240 60 L280 40"
-                  fill="none"
-                  stroke="#FE4F2D"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-
-                <!-- x labels -->
-                <g font-size="8" fill="#555">
-                  <text x="60" y="152">200</text>
-                  <text x="100" y="152">280</text>
-                  <text x="140" y="152">360</text>
-                  <text x="180" y="152">480</text>
-                  <text x="220" y="152">560</text>
-                  <text x="260" y="152">100%</text>
-                </g>
-              </svg>
-            </div>
-          </div>
-
-          <!-- Tasks completed chart (static SVG bar chart) -->
-          <div>
-            <p class="text-sm font-semibold mb-2">Tasks Completed</p>
-            <div class="bg-white rounded-xl px-3 pt-3 pb-4">
-              <svg viewBox="0 0 300 120" class="w-full h-auto">
-                <!-- axes -->
-                <line x1="40" y1="20" x2="40" y2="100" stroke="#ddd" stroke-width="1" />
-                <line x1="40" y1="100" x2="280" y2="100" stroke="#ddd" stroke-width="1" />
-
-                <!-- bars -->
-                <g fill="#FE9C80">
-                  <rect x="55" y="80" width="18" height="20" rx="2" />
-                  <rect x="95" y="70" width="18" height="30" rx="2" />
-                  <rect x="135" y="60" width="18" height="40" rx="2" />
-                  <rect x="175" y="50" width="18" height="50" rx="2" />
-                  <rect x="215" y="40" width="18" height="60" rx="2" />
-                </g>
-
-                <!-- y labels -->
-                <g font-size="8" fill="#555">
-                  <text x="28" y="98">0</text>
-                  <text x="28" y="78">2</text>
-                  <text x="28" y="58">4</text>
-                  <text x="28" y="38">6</text>
-                </g>
-
-                <!-- x labels -->
-                <g font-size="8" fill="#555">
-                  <text x="58" y="112">100</text>
-                  <text x="98" y="112">120</text>
-                  <text x="138" y="112">170</text>
-                  <text x="178" y="112">200</text>
-                  <text x="218" y="112">330</text>
-                </g>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Weekly Overview card -->
-      <article class="bg-bgCard rounded-3xl shadow-md p-6 md:p-7 flex flex-col">
-        <header class="mb-4">
-          <h2 class="text-xl font-semibold text-center tracking-wide">WEEKLY OVERVIEW</h2>
-        </header>
-
-        <div class="bg-back-4 rounded-2xl shadow-inner flex-1 p-6 mt-4 space-y-6 overflow-hidden">
-          <!-- Donut + pie charts -->
-          <div class="bg-white rounded-xl px-5 pt-4 pb-5">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-around gap-6 max-w-full">
-              <!-- Donut -->
-              <div class="flex flex-col items-center flex-1">
-                <svg viewBox="0 0 160 160" class="w-22 h-22 md:w-30 md:h-30">
-                  <circle cx="80" cy="80" r="50" fill="none" stroke="#fde2d7" stroke-width="18" />
-                  <circle
-                    cx="80"
-                    cy="80"
-                    r="50"
+                  <!-- line -->
+                  <path
+                    d="M40 120 L80 105 L120 110 L160 95 L200 80 L240 60 L280 40"
                     fill="none"
                     stroke="#FE4F2D"
-                    stroke-width="18"
-                    stroke-dasharray="235 314"
+                    stroke-width="3"
                     stroke-linecap="round"
-                    transform="rotate(-90 80 80)" />
-                </svg>
-                <div class="mt-2 text-center">
-                  <p class="text-2xl font-bold text-accent">75%</p>
-                  <p class="text-xs text-gray-600">Completion</p>
-                </div>
-              </div>
+                    stroke-linejoin="round" />
 
-              <!-- Pie -->
-              <div class="flex flex-col items-center flex-1">
-                <svg viewBox="0 0 160 160" class="w-22 h-22 md:w-30 md:h-30">
-                  <circle cx="80" cy="80" r="50" fill="#fde2d7" />
-                  <path d="M80 80 L80 30 A50 50 0 0 1 130 80 Z" fill="#FE4F2D" />
+                  <!-- x labels -->
+                  <g font-size="8" fill="#555">
+                    <text x="60" y="152">200</text>
+                    <text x="100" y="152">280</text>
+                    <text x="140" y="152">360</text>
+                    <text x="180" y="152">480</text>
+                    <text x="220" y="152">560</text>
+                    <text x="260" y="152">100%</text>
+                  </g>
                 </svg>
-                <div class="mt-2 text-center text-xs text-gray-600">
-                  <p><span class="font-semibold text-accent">History</span> 20%</p>
-                  <p><span class="font-semibold">Literature</span> 80%</p>
-                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Weekly numbers -->
-          <div class="grid grid-cols-2 gap-4 text-xs text-gray-700">
-            <div class="space-y-1">
-              <p class="font-semibold">Study Days</p>
-              <p>5 / 7 days completed this week.</p>
-            </div>
-            <div class="space-y-1">
-              <p class="font-semibold">Average Focus</p>
-              <p>2h 10m per session.</p>
-            </div>
-            <div class="space-y-1">
-              <p class="font-semibold">Top Subject</p>
-              <p>Web Development</p>
-            </div>
-            <div class="space-y-1">
-              <p class="font-semibold">Most Productive Day</p>
-              <p>Wednesday</p>
-            </div>
-          </div>
+            <!-- Tasks completed chart (static SVG bar chart) -->
+            <div>
+              <p class="text-sm font-semibold mb-2">Tasks Completed</p>
+              <div class="bg-white rounded-xl px-3 pt-3 pb-4">
+                <svg viewBox="0 0 300 120" class="w-full h-auto">
+                  <!-- axes -->
+                  <line x1="40" y1="20" x2="40" y2="100" stroke="#ddd" stroke-width="1" />
+                  <line x1="40" y1="100" x2="280" y2="100" stroke="#ddd" stroke-width="1" />
 
-          <!-- Productivity score pill -->
-          <div class="mt-2">
-            <div class="bg-white rounded-full h-11 flex items-center justify-between px-4 text-xs">
-              <span class="font-semibold">PRODUCTIVITY SCORE:</span>
-              <span class="font-bold text-accent">88 / 100</span>
-            </div>
-          </div>
-        </div>
-      </article>
+                  <!-- bars -->
+                  <g fill="#FE9C80">
+                    <rect x="55" y="80" width="18" height="20" rx="2" />
+                    <rect x="95" y="70" width="18" height="30" rx="2" />
+                    <rect x="135" y="60" width="18" height="40" rx="2" />
+                    <rect x="175" y="50" width="18" height="50" rx="2" />
+                    <rect x="215" y="40" width="18" height="60" rx="2" />
+                  </g>
 
-      <!-- Goals & Streaks card -->
-      <article class="bg-bgCard rounded-3xl shadow-md p-6 md:p-7 flex flex-col">
-        <header class="mb-4">
-          <h2 class="text-xl font-semibold text-center tracking-wide">GOALS &amp; STREAKS</h2>
-        </header>
+                  <!-- y labels -->
+                  <g font-size="8" fill="#555">
+                    <text x="28" y="98">0</text>
+                    <text x="28" y="78">2</text>
+                    <text x="28" y="58">4</text>
+                    <text x="28" y="38">6</text>
+                  </g>
 
-        <div class="bg-back-4 rounded-2xl shadow-inner flex-1 p-6 mt-4 space-y-6 overflow-hidden">
-          <!-- First task bar chart -->
-          <div>
-            <p class="text-sm font-semibold mb-2">First Task</p>
-            <div class="bg-white rounded-xl px-3 pt-3 pb-4">
-              <svg viewBox="0 0 300 120" class="w-full h-auto">
-                <!-- axes -->
-                <line x1="40" y1="20" x2="40" y2="100" stroke="#ddd" stroke-width="1" />
-                <line x1="40" y1="100" x2="280" y2="100" stroke="#ddd" stroke-width="1" />
-
-                <!-- bars -->
-                <g fill="#FE9C80">
-                  <rect x="55" y="70" width="14" height="30" rx="2" />
-                  <rect x="95" y="50" width="14" height="50" rx="2" />
-                  <rect x="135" y="62" width="14" height="38" rx="2" />
-                  <rect x="175" y="55" width="14" height="45" rx="2" />
-                  <rect x="215" y="60" width="14" height="40" rx="2" />
-                </g>
-
-                <!-- y labels -->
-                <g font-size="8" fill="#555">
-                  <text x="28" y="98">0</text>
-                  <text x="28" y="78">1</text>
-                  <text x="28" y="58">2</text>
-                  <text x="28" y="38">3</text>
-                </g>
-
-                <!-- x labels -->
-                <g font-size="8" fill="#555">
-                  <text x="55" y="112">110</text>
-                  <text x="95" y="112">150</text>
-                  <text x="135" y="112">170</text>
-                  <text x="175" y="112">300</text>
-                  <text x="215" y="112">350</text>
-                </g>
-              </svg>
+                  <!-- x labels -->
+                  <g font-size="8" fill="#555">
+                    <text x="58" y="112">100</text>
+                    <text x="98" y="112">120</text>
+                    <text x="138" y="112">170</text>
+                    <text x="178" y="112">200</text>
+                    <text x="218" y="112">330</text>
+                  </g>
+                </svg>
+              </div>
             </div>
           </div>
+        </article>
 
-          <div class="space-y-1 text-sm">
-            <p class="font-semibold">Pomodoro Sessions</p>
-            <p class="text-xs text-gray-600">Focus time vs short and long breaks.</p>
-          </div>
+        <!-- Weekly Overview card -->
+        <article class="bg-bgCard rounded-3xl shadow-md p-6 md:p-7 flex flex-col">
+          <header class="mb-4">
+            <h2 class="text-xl font-semibold text-center tracking-wide">WEEKLY OVERVIEW</h2>
+          </header>
 
-          <div class="space-y-2 text-sm">
-            <p class="font-semibold">Current Streak</p>
-            <div class="bg-white rounded-full h-11 flex items-center justify-between px-4">
-              <span>Days focused in a row</span>
-              <span class="font-bold text-accent">14 DAYS</span>
+          <div class="bg-back-4 rounded-2xl shadow-inner flex-1 p-6 mt-4 space-y-6 overflow-hidden">
+            <!-- Donut + pie charts -->
+            <div class="bg-white rounded-xl px-5 pt-4 pb-5">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-around gap-6 max-w-full">
+                <!-- Donut -->
+                <div class="flex flex-col items-center flex-1">
+                  <svg viewBox="0 0 160 160" class="w-22 h-22 md:w-30 md:h-30">
+                    <circle cx="80" cy="80" r="50" fill="none" stroke="#fde2d7" stroke-width="18" />
+                    <circle
+                      cx="80"
+                      cy="80"
+                      r="50"
+                      fill="none"
+                      stroke="#FE4F2D"
+                      stroke-width="18"
+                      stroke-dasharray="235 314"
+                      stroke-linecap="round"
+                      transform="rotate(-90 80 80)" />
+                  </svg>
+                  <div class="mt-2 text-center">
+                    <p class="text-2xl font-bold text-accent">75%</p>
+                    <p class="text-xs text-gray-600">Completion</p>
+                  </div>
+                </div>
+
+                <!-- Pie -->
+                <div class="flex flex-col items-center flex-1">
+                  <svg viewBox="0 0 160 160" class="w-22 h-22 md:w-30 md:h-30">
+                    <circle cx="80" cy="80" r="50" fill="#fde2d7" />
+                    <path d="M80 80 L80 30 A50 50 0 0 1 130 80 Z" fill="#FE4F2D" />
+                  </svg>
+                  <div class="mt-2 text-center text-xs text-gray-600">
+                    <p><span class="font-semibold text-accent">History</span> 20%</p>
+                    <p><span class="font-semibold">Literature</span> 80%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Weekly numbers -->
+            <div class="grid grid-cols-2 gap-4 text-xs text-gray-700">
+              <div class="space-y-1">
+                <p class="font-semibold">Study Days</p>
+                <p>5 / 7 days completed this week.</p>
+              </div>
+              <div class="space-y-1">
+                <p class="font-semibold">Average Focus</p>
+                <p>2h 10m per session.</p>
+              </div>
+              <div class="space-y-1">
+                <p class="font-semibold">Top Subject</p>
+                <p>Web Development</p>
+              </div>
+              <div class="space-y-1">
+                <p class="font-semibold">Most Productive Day</p>
+                <p>Wednesday</p>
+              </div>
+            </div>
+
+            <!-- Productivity score pill -->
+            <div class="mt-2">
+              <div class="bg-white rounded-full h-11 flex items-center justify-between px-4 text-xs">
+                <span class="font-semibold">PRODUCTIVITY SCORE:</span>
+                <span class="font-bold text-accent">88 / 100</span>
+              </div>
             </div>
           </div>
+        </article>
 
-          <div class="space-y-2 text-sm">
-            <p class="font-semibold">Next Milestone</p>
-            <div class="bg-accent text-white rounded-xl h-12 flex items-center justify-center text-xs font-semibold">
-              NEXT MILESTONE: 30 DAYS FOCUSED
+        <!-- Goals & Streaks card -->
+        <article class="bg-bgCard rounded-3xl shadow-md p-6 md:p-7 flex flex-col">
+          <header class="mb-4">
+            <h2 class="text-xl font-semibold text-center tracking-wide">GOALS &amp; STREAKS</h2>
+          </header>
+
+          <div class="bg-back-4 rounded-2xl shadow-inner flex-1 p-6 mt-4 space-y-6 overflow-hidden">
+            <!-- First task bar chart -->
+            <div>
+              <p class="text-sm font-semibold mb-2">First Task</p>
+              <div class="bg-white rounded-xl px-3 pt-3 pb-4">
+                <svg viewBox="0 0 300 120" class="w-full h-auto">
+                  <!-- axes -->
+                  <line x1="40" y1="20" x2="40" y2="100" stroke="#ddd" stroke-width="1" />
+                  <line x1="40" y1="100" x2="280" y2="100" stroke="#ddd" stroke-width="1" />
+
+                  <!-- bars -->
+                  <g fill="#FE9C80">
+                    <rect x="55" y="70" width="14" height="30" rx="2" />
+                    <rect x="95" y="50" width="14" height="50" rx="2" />
+                    <rect x="135" y="62" width="14" height="38" rx="2" />
+                    <rect x="175" y="55" width="14" height="45" rx="2" />
+                    <rect x="215" y="60" width="14" height="40" rx="2" />
+                  </g>
+
+                  <!-- y labels -->
+                  <g font-size="8" fill="#555">
+                    <text x="28" y="98">0</text>
+                    <text x="28" y="78">1</text>
+                    <text x="28" y="58">2</text>
+                    <text x="28" y="38">3</text>
+                  </g>
+
+                  <!-- x labels -->
+                  <g font-size="8" fill="#555">
+                    <text x="55" y="112">110</text>
+                    <text x="95" y="112">150</text>
+                    <text x="135" y="112">170</text>
+                    <text x="175" y="112">300</text>
+                    <text x="215" y="112">350</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="space-y-1 text-sm">
+              <p class="font-semibold">Pomodoro Sessions</p>
+              <p class="text-xs text-gray-600">Focus time vs short and long breaks.</p>
+            </div>
+
+            <div class="space-y-2 text-sm">
+              <p class="font-semibold">Current Streak</p>
+              <div class="bg-white rounded-full h-11 flex items-center justify-between px-4">
+                <span>Days focused in a row</span>
+                <span class="font-bold text-accent">14 DAYS</span>
+              </div>
+            </div>
+
+            <div class="space-y-2 text-sm">
+              <p class="font-semibold">Next Milestone</p>
+              <div class="bg-accent text-white rounded-xl h-12 flex items-center justify-center text-xs font-semibold">
+                NEXT MILESTONE: 30 DAYS FOCUSED
+              </div>
             </div>
           </div>
-        </div>
-      </article>
-
+        </article>
       </section>
     </div>
   </main>
 
-  <!-- Footer réutilisé -->
-  <footer class="px-10 py-10 bg-footer text-light">
-    <div class="flex flex-col md:flex-row justify-between">
-
-      <div>
-        <img src="public/logo1.png" class="h-16 mt-4 bg-textlight" alt="Logo">
-        <p class="max-w-xs text-gray-300 mb-4">
-          Connecting students worldwide to learn and grow together.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold mb-2 bg-textlight">Quick Links</h3>
-        <ul class="space-y-1 text-gray-300 bg-textlight">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>How It Works</li>
-          <li>Contact</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold mb-2 bg-textlight">Resources</h3>
-        <ul class="space-y-1 text-gray-300 bg-textlight">
-          <li>Help Center</li>
-          <li>Privacy Policy</li>
-          <li>Terms of Service</li>
-          <li>FAQs</li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold mb-2 bg-textlight">Get in Touch</h3>
-        <p class="text-gray-300 mb-3 bg-textlight">hello@esprit2peer.com</p>
-
-        <div class="flex gap-4">
-          <img src="public/facebook.png" class="h-6" alt="Facebook">
-          <img src="public/instagram.png" class="h-6" alt="Instagram">
-          <img src="public/twitter.png" class="h-6" alt="Twitter">
+  <!-- FOOTER (identical to Sarah's page) -->
+  <footer class="bg-footer text-white mt-12 lg:mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 lg:py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div class="sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-3">
+            <img src="public/logo1.png" alt="Logo" class="h-10 lg:h-12">
+          </div>
+          <p class="mt-3 lg:mt-4 text-gray-300 text-sm">Connecting students worldwide to achieve academic excellence together.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Quick Links</h4>
+          <ul class="space-y-1 lg:space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-orange-400">Home</a></li>
+            <li><a href="#" class="hover:text-orange-400">About Us</a></li>
+            <li><a href="#" class="hover:text-orange-400">How It Works</a></li>
+            <li><a href="#" class="hover:text-orange-400">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Resources</h4>
+          <ul class="space-y-1 lg:space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-orange-400">Help Center</a></li>
+            <li><a href="#" class="hover:text-orange-400">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-orange-400">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-orange-400">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="sm:col-span-2 lg:col-span-1">
+          <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Get in Touch</h4>
+          <p class="text-gray-300 mb-4 lg:mb-6 text-sm">hello@esprit2peer.com</p>
+          <div class="flex gap-4 lg:gap-6">
+            <img src="public/facebook.png" class="h-7 lg:h-8" alt="FB">
+            <img src="public/instagram.png" class="h-7 lg:h-8" alt="IG">
+            <img src="public/twitter.png" class="h-7 lg:h-8" alt="TW">
+          </div>
         </div>
       </div>
-
+      <div class="text-center text-gray-400 text-xs lg:text-sm mt-8 lg:mt-12 pt-6 lg:pt-8 border-t border-gray-700">
+        © 2025 Esprit2Peer. All rights reserved. Made with Love for students
+      </div>
     </div>
-
-    <p class="text-center text-gray-400 mt-10 bg-textlight">
-      © 2025 Esprit2Peer. All Rights Reserved.
-    </p>
   </footer>
 
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
-
-

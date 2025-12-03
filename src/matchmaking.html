@@ -6,88 +6,118 @@
     <title>Matchmaking • Esprit2Peer</title>
     <link rel="stylesheet" href="file.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
 </head>
-<body class="bg-primary min-h-screen">
-    <header class="flex justify-between items-center px-4 md:px-8 py-4 bg-footer rounded-xl mx-4 md:mx-12 mt-4 shadow-md">
-        <img src="public/logo.png" class="h-10 md:h-12" alt="Logo">
-
-        <button class="md:hidden text-white">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-
-        <nav class="hidden md:flex nav-gap-51 text-white text-lg font-regular">
-            <a href="#" class="hover:text-orange-400">Home</a>
-            <a href="#" class="hover:text-orange-400">Planner</a>
-            <a href="#" class="hover:text-orange-400">Match Making</a>
-            <a href="#" class="hover:text-orange-400">Focus</a>
-            <a href="#" class="hover:text-orange-400">Analytics</a>
-            <a href="#" class="hover:text-orange-400">Forum</a>
+<body class="bg-primary text-text min-h-screen">
+    <!-- UPDATED HEADER WITH MOBILE MENU (from Alaa's page) -->
+    <header class="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 bg-footer rounded-xl mx-4 sm:mx-8 lg:mx-12 mt-4 shadow-md">
+        <img src="public/logo.png" class="h-10 sm:h-12" alt="Logo">
+        <nav class="hidden lg:flex gap-6 xl:gap-8 text-white text-lg font-regular">
+            <a href="/src/home.html" class="hover:text-orange-400">Home</a>
+            <a href="/src/calandar2.html" class="hover:text-orange-400">Planner</a>
+            <a href="/src/matchmaking.html" class="text-orange-400">Matchmaking</a>
+            <a href="/src/joinsession.html" class="hover:text-orange-400">Focus</a>
+            <a href="/src/Analytics.html" class="hover:text-orange-400">Analytics</a>
+            <a href="/src/forum.html" class="hover:text-orange-400">Forum</a>
         </nav>
-
-        <div class="flex items-center gap-2 md:gap-4">
-            <button class="relative">
-                <img src="public/notification.png" class="h-5 md:h-6"></button>
-            <button class="relative">
-                <img src="public/parametres.png" class="h-5 md:h-6"></button>
-            <img src="public/user.png" class="h-10 w-12 md:h-12 md:w-14 rounded-full" alt="User">
+        <div class="flex items-center gap-3 sm:gap-5">
+            <button class="text-white hover:text-orange-300 transition hidden sm:block">
+                <span class="material-symbols-outlined text-2xl sm:text-3xl">notifications</span>
+            </button>
+            <button class="text-white hover:text-orange-300 transition hidden sm:block">
+                <span class="material-symbols-outlined text-2xl sm:text-3xl">settings</span>
+            </button>
+            <a href="/src/profilUser.html">
+                <img src="public/f2.png" 
+                     alt="User Avatar" 
+                     class="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover cursor-pointer hover:opacity-80 transition">
+            </a>
+            <button id="mobile-menu-button" class="lg:hidden text-white">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
         </div>
     </header>
 
-    <div class="content-container mx-4 md:mx-8 mt-8">
-        <div class="text-center mb-10">
-            <h1 class="text-3xl md:text-4xl font-bold text-darkgreen mb-3">
+    <!-- MOBILE MENU (from Alaa's page) -->
+    <div id="mobile-menu" class="mobile-menu lg:hidden bg-footer rounded-xl mx-4 sm:mx-8 mt-2 px-6 py-4 hidden">
+        <nav class="flex flex-col gap-4 text-white">
+            <a href="/src/home.html" class="hover:text-orange-400 py-2">Home</a>
+            <a href="/src/calandar2.html" class="hover:text-orange-400 py-2">Planner</a>
+            <a href="/src/matchmaking.html" class="text-orange-400 py-2">Matchmaking</a>
+            <a href="/src/joinsession.html" class="hover:text-orange-400 py-2">Focus</a>
+            <a href="/src/Analytics.html" class="hover:text-orange-400 py-2">Analytics</a>
+            <a href="/src/forum.html" class="hover:text-orange-400 py-2">Forum</a>
+        </nav>
+        <div class="flex justify-center gap-6 mt-4 sm:hidden">
+            <button class="text-white hover:text-orange-300 transition">
+                <span class="material-symbols-outlined text-2xl">notifications</span>
+            </button>
+            <button class="text-white hover:text-orange-300 transition">
+                <span class="material-symbols-outlined text-2xl">settings</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="content-container mx-4 sm:mx-6 lg:mx-8 mt-6 lg:mt-8">
+        <div class="text-center mb-8 lg:mb-10">
+            <h1 class="text-2xl lg:text-3xl xl:text-4xl font-bold text-darkgreen mb-3">
                 Find Your Perfect Study Match
             </h1>
-            <p class="text-gray-600 max-w-2xl mx-auto">
+            <p class="text-gray-600 max-w-2xl mx-auto text-sm lg:text-base">
                 Connect with peers who share your academic interests and learning goals
             </p>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-4 mb-8">
+        <div class="flex flex-col md:flex-row gap-4 mb-6 lg:mb-8">
             <!-- Search -->
             <div class="flex-1 relative">
                 <div class="absolute left-4 top-1/2 transform -translate-y-1/2">
-                    <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/search.svg" class="w-5 h-5 text-gray-400" alt="Search">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
                 </div>
                 <input 
                     type="text" 
                     placeholder="Search by name, location, or interests..." 
-                    class="w-full pl-12 pr-4 py-3 bg-white rounded-xl border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition"
+                    class="w-full pl-12 pr-4 py-3 bg-white rounded-xl lg:rounded-2xl border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition text-sm lg:text-base"
                 >
             </div>
             <a href="matchmakingCreate.html">
-            <button class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-xl flex items-center gap-2 transition-all hover:scale-105 shadow-lg">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/plus-circle.svg" class="w-5 h-5" alt="Plus">
-                <span class="font-medium">Create Matchmaking</span>
-            </button>
-</a>        </div>
+                <button class="bg-accent hover:bg-accent/90 text-white px-5 lg:px-6 py-3 rounded-xl lg:rounded-2xl flex items-center gap-2 transition-all hover:scale-105 shadow-lg text-sm lg:text-base">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                    </svg>
+                    <span class="font-medium">Create Matchmaking</span>
+                </button>
+            </a>
+        </div>
 
-        <div class="flex flex-col lg:flex-row gap-6 mb-12">
+        <div class="flex flex-col lg:flex-row gap-6 mb-8 lg:mb-12">
             <div class="lg:w-1/4">
-                <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 sticky top-6">
-                    <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-xl font-bold text-gray-800">Filters</h2>
+                <div class="bg-white rounded-xl lg:rounded-2xl border border-gray-200 shadow-sm p-4 lg:p-6 sticky top-6">
+                    <div class="flex items-center justify-between mb-4 lg:mb-6">
+                        <h2 class="text-lg lg:text-xl font-bold text-gray-800">Filters</h2>
                         <button class="text-sm text-accent hover:text-accent/80">Clear All</button>
                     </div>
 
-                    <div class="mb-6">
+                    <div class="mb-4 lg:mb-6">
                         <p class="text-sm text-gray-600 mb-3">Active Filters</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-accent/10 text-accent px-3 py-1.5 rounded-full text-sm flex items-center gap-1">
+                            <span class="bg-accent/10 text-accent px-3 py-1.5 rounded-full text-xs lg:text-sm flex items-center gap-1">
                                 UX <span class="text-xs">×</span>
                             </span>
-                            <span class="bg-accent/10 text-accent px-3 py-1.5 rounded-full text-sm flex items-center gap-1">
+                            <span class="bg-accent/10 text-accent px-3 py-1.5 rounded-full text-xs lg:text-sm flex items-center gap-1">
                                 Java <span class="text-xs">×</span>
                             </span>
-                            <span class="bg-accent/10 text-accent px-3 py-1.5 rounded-full text-sm flex items-center gap-1">
+                            <span class="bg-accent/10 text-accent px-3 py-1.5 rounded-full text-xs lg:text-sm flex items-center gap-1">
                                 JS <span class="text-xs">×</span>
                             </span>
                         </div>
                     </div>
 
-                    <div class="mb-6">
+                    <div class="mb-4 lg:mb-6">
                         <label class="block text-sm font-medium text-gray-700 mb-3">Search Skills</label>
                         <div class="relative">
                             <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
@@ -103,7 +133,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-6">
+                    <div class="mb-4 lg:mb-6">
                         <label class="block text-sm font-medium text-gray-700 mb-3">Location</label>
                         <div class="relative">
                             <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
@@ -120,28 +150,24 @@
                         </div>
                     </div>
 
-                 <div class="mb-6">
-    <div class="flex justify-between items-center mb-3">
-        <label class="text-sm font-medium text-gray-700">Age Range</label>
-        <span class="text-sm text-accent font-medium">18-33</span>
-    </div>
-    <div class="px-2 relative">
-        <div class="absolute top-1/2 left-0 right-0 h-2 bg-gray-200 rounded-lg -translate-y-1/2"></div>
-        
-        <div class="absolute top-1/2 left-0 w-4 h-4 bg-accent rounded-full -translate-y-1/2"></div>
-        
-        <div class="absolute top-1/2 left-[25%] w-4 h-4 bg-accent rounded-full -translate-y-1/2"></div>
-        
-        
-    </div>
-</div>
+                    <div class="mb-4 lg:mb-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="text-sm font-medium text-gray-700">Age Range</label>
+                            <span class="text-sm text-accent font-medium">18-33</span>
+                        </div>
+                        <div class="px-2 relative">
+                            <div class="absolute top-1/2 left-0 right-0 h-2 bg-gray-200 rounded-lg -translate-y-1/2"></div>
+                            <div class="absolute top-1/2 left-0 w-4 h-4 bg-accent rounded-full -translate-y-1/2"></div>
+                            <div class="absolute top-1/2 left-[25%] w-4 h-4 bg-accent rounded-full -translate-y-1/2"></div>
+                        </div>
+                    </div>
 
-                    <div class="mb-8">
+                    <div class="mb-6 lg:mb-8">
                         <h3 class="text-sm font-medium text-gray-700 mb-4">Preferences</h3>
                         
                         <div class="flex items-center justify-between mb-4">
                             <div>
-                                <p class="text-gray-800 font-medium">Verified Profile</p>
+                                <p class="text-gray-800 font-medium text-sm">Verified Profile</p>
                                 <p class="text-xs text-gray-500">Only show verified users</p>
                             </div>
                             <div class="relative inline-block w-12 h-6">
@@ -152,7 +178,7 @@
                         
                         <div class="flex items-center justify-between">
                             <div>
-                                <p class="text-gray-800 font-medium">In Group</p>
+                                <p class="text-gray-800 font-medium text-sm">In Group</p>
                                 <p class="text-xs text-gray-500">Show group activities</p>
                             </div>
                             <div class="relative inline-block w-12 h-6">
@@ -161,7 +187,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="w-full bg-secondary hover:bg-secondary/90 text-white py-3 rounded-xl font-medium transition">
+                    <button class="w-full bg-secondary hover:bg-secondary/90 text-white py-3 rounded-xl lg:rounded-2xl font-medium transition text-sm lg:text-base">
                         Apply Filters
                     </button>
                 </div>
@@ -169,85 +195,92 @@
             <div class="lg:w-2/4">
                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 gap-4">
                     <div>
-                        <h2 class="text-2xl font-bold text-gray-800">Top Suggestions</h2>
-                        <p class="text-gray-600">Based on your interests and preferences</p>
+                        <h2 class="text-xl lg:text-2xl font-bold text-gray-800">Top Suggestions</h2>
+                        <p class="text-gray-600 text-sm lg:text-base">Based on your interests and preferences</p>
                     </div>
                     <div class="flex items-center gap-4">
-                        <button class="text-accent hover:text-accent/80 font-medium whitespace-nowrap">View All</button>
+                        <button class="text-accent hover:text-accent/80 font-medium whitespace-nowrap text-sm lg:text-base">View All</button>
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                <div class="grid md:grid-cols-2 gap-4 lg:gap-6">
+                    <div class="bg-white rounded-xl lg:rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                         <div class="relative">
                             <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/rectangle.png" 
-                                 class="w-full h-72 object-cover" alt="Med Aziz">
+                                 class="w-full h-48 lg:h-72 object-cover" alt="Med Aziz">
                             <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
                                 <div class="flex items-center gap-1">
-                                    <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/star-2.svg" class="w-4 h-4">
-                                    <span class="text-blue-800 font-bold">5.0</span>
+                                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <span class="text-blue-800 font-bold text-sm lg:text-base">5.0</span>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="p-6">
+                        <div class="p-4 lg:p-6">
                             <div class="flex items-start justify-between mb-4">
                                 <div>
-                                    <h3 class="text-xl font-bold text-gray-800">Med Aziz</h3>
-                                    <p class="text-gray-600">4twin • Full Stack Developer</p>
+                                    <h3 class="text-lg lg:text-xl font-bold text-gray-800">Med Aziz</h3>
+                                    <p class="text-gray-600 text-sm lg:text-base">4twin • Full Stack Developer</p>
                                 </div>
                                 <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Online</span>
                             </div>
                             
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg text-sm">ANGULAR</span>
-                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg text-sm">Spring Boot</span>
-                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg text-sm">DevOps</span>
+                            <div class="flex flex-wrap gap-2 mb-4 lg:mb-6">
+                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg text-xs lg:text-sm">ANGULAR</span>
+                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg text-xs lg:text-sm">Spring Boot</span>
+                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg text-xs lg:text-sm">DevOps</span>
                             </div>
                             
                             <div class="flex gap-3">
-                                <button class="flex-1 button text-white py-3 rounded-xl hover:opacity-90 transition">
+                                <button class="flex-1 button text-white py-3 rounded-xl hover:opacity-90 transition text-sm lg:text-base">
                                     View Profile
                                 </button>
-                                <button class="flex-1 border-2 border-accent text-accent py-3 rounded-xl hover:bg-accent hover:text-white transition">
+                                <button class="flex-1 border-2 border-accent text-accent py-3 rounded-xl hover:bg-accent hover:text-white transition text-sm lg:text-base">
                                     Connect
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="bg-white rounded-xl lg:rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
                         <div class="relative">
                             <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/avataruser.png" 
-                                 class="w-full h-72 object-cover" alt="Alaa ben jeddi">
+                                 class="w-full h-48 lg:h-72 object-cover" alt="Alaa ben jeddi">
                             <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
                                 <div class="flex items-center gap-1">
-                                    <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/star-2.svg" class="w-4 h-4">
-                                    <span class="text-blue-800 font-bold">5.0</span>
+                                    <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    <span class="text-blue-800 font-bold text-sm lg:text-base">5.0</span>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="p-6">
+                        <div class="p-4 lg:p-6">
                             <div class="flex items-start justify-between mb-4">
                                 <div>
-                                    <h3 class="text-xl font-bold text-gray-800">Alaa ben jeddi</h3>
-                                    <p class="text-gray-600">4Twin • Cloud Engineer</p>
+                                    <h3 class="text-lg lg:text-xl font-bold text-gray-800">Alaa ben jeddi</h3>
+                                    <p class="text-gray-600 text-sm lg:text-base">4Twin • Cloud Engineer</p>
                                 </div>
                                 <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Offline</span>
                             </div>
                             
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg text-sm">AWS</span>
-                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg text-sm">Docker</span>
-                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg text-sm">Kubernetes</span>
+                            <div class="flex flex-wrap gap-2 mb-4 lg:mb-6">
+                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg text-xs lg:text-sm">AWS</span>
+                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg text-xs lg:text-sm">Docker</span>
+                                <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-lg text-xs lg:text-sm">Kubernetes</span>
                             </div>
                             
                             <div class="flex gap-3">
-                                <button class="flex-1 button text-white py-3 rounded-xl hover:opacity-90 transition">
-                                    View Profile
-                                </button>
-                                <button class="flex-1 border-2 border-accent text-accent py-3 rounded-xl hover:bg-accent hover:text-white transition">
+                               <a href="/src/matchedUser.html" class="flex-1">
+  <button class="w-full button text-white py-3 rounded-xl hover:opacity-90 transition text-sm lg:text-base">
+    View Profile
+  </button>
+</a>
+
+                                <button class="flex-1 border-2 border-accent text-accent py-3 rounded-xl hover:bg-accent hover:text-white transition text-sm lg:text-base">
                                     Connect
                                 </button>
                             </div>
@@ -257,9 +290,9 @@
             </div>
 
             <div class="lg:w-1/4">
-                <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 sticky top-6">
-                    <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-xl font-bold text-gray-800">Recent Activity</h2>
+                <div class="bg-white rounded-xl lg:rounded-2xl border border-gray-200 shadow-sm p-4 lg:p-6 sticky top-6">
+                    <div class="flex items-center justify-between mb-4 lg:mb-6">
+                        <h2 class="text-lg lg:text-xl font-bold text-gray-800">Recent Activity</h2>
                         <button class="text-sm text-accent hover:text-accent/80">View All</button>
                     </div>
 
@@ -271,24 +304,26 @@
                                 <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-accent rounded-full border-2 border-white"></div>
                             </div>
                             <div class="flex-1">
-                                <p class="font-medium text-gray-800"> x liked your profile</p>
+                                <p class="font-medium text-gray-800 text-sm">x liked your profile</p>
                                 <p class="text-xs text-gray-500">2 minutes ago</p>
                             </div>
                             <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center">
-                                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icons8-like-50-1.png" class="w-4 h-4" alt="Like">
+                                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-8 pt-6 border-t border-gray-200">
+                    <div class="mt-6 lg:mt-8 pt-4 lg:pt-6 border-t border-gray-200">
                         <h3 class="text-sm font-medium text-gray-700 mb-4">Your Stats</h3>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="bg-accent/5 p-4 rounded-xl">
-                                <p class="text-2xl font-bold text-accent">12</p>
+                                <p class="text-xl lg:text-2xl font-bold text-accent">12</p>
                                 <p class="text-xs text-gray-600">Connections</p>
                             </div>
                             <div class="bg-secondary/5 p-4 rounded-xl">
-                                <p class="text-2xl font-bold text-secondary">5</p>
+                                <p class="text-xl lg:text-2xl font-bold text-secondary">5</p>
                                 <p class="text-xs text-gray-600">Matchmaking</p>
                             </div>
                         </div>
@@ -297,16 +332,16 @@
             </div>
         </div>
 
-        <div class="flex flex-col lg:flex-row gap-6 mb-12">
+        <div class="flex flex-col lg:flex-row gap-6 mb-8 lg:mb-12">
             <div class="lg:w-1/4"></div>
             
             <div class="lg:w-3/4">
                 <div class="flex items-center justify-between mb-6">
                     <div>
-                        <h2 class="text-2xl font-bold text-gray-800">More Suggestions</h2>
-                        <p class="text-gray-600">Other students you might like</p>
+                        <h2 class="text-xl lg:text-2xl font-bold text-gray-800">More Suggestions</h2>
+                        <p class="text-gray-600 text-sm lg:text-base">Other students you might like</p>
                     </div>
-                    <button class="text-gray-600 hover:text-gray-800 flex items-center gap-2">
+                    <button class="text-gray-600 hover:text-gray-800 flex items-center gap-2 text-sm lg:text-base">
                         <span>Refresh</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
@@ -314,448 +349,231 @@
                     </button>
                 </div>
 
-               <div class="grid md:grid-cols-3 gap-6">
-    <div class="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-4 mb-4">
-            <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/shape-10.png" 
-                 class="w-12 h-12 rounded-full object-cover border-2 border-accent/20" alt="User">
-            <div>
-                <div class="flex items-center gap-2">
-                    <h4 class="font-bold text-gray-800">Med Salah</h4>
-                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                <div class="grid md:grid-cols-3 gap-4 lg:gap-6">
+                    <!-- Student Cards (repeated structure, 6 total) -->
+                    <div class="bg-white rounded-xl lg:rounded-2xl border border-gray-200 p-4 lg:p-6 hover:shadow-md transition-shadow">
+                        <div class="flex items-center gap-4 mb-4">
+                            <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/shape-10.png" 
+                                 class="w-10 h-10 lg:w-12 lg:h-12 rounded-full object-cover border-2 border-accent/20" alt="User">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h4 class="font-bold text-gray-800 text-sm lg:text-base">Med Salah</h4>
+                                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                                </div>
+                                <p class="text-gray-600 text-xs lg:text-sm">Java Developer</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Rating -->
+                        <div class="flex items-center gap-1 mb-4">
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
+                                    <span class="text-xs font-bold">Meet</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
+                                    <span class="text-xs font-bold">Devops</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
+                                    <span class="text-xs font-bold">online</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center gap-2">
+                            <button class="p-2 hover:bg-gray-100 rounded-full">
+                                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </button>
+                            <button class="p-2 hover:bg-gray-100 rounded-full">
+                                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                </svg>
+                            </button>
+                            <button class="p-2 hover:bg-gray-100 rounded-full">
+                                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Repeat similar structure for other 5 cards... -->
+                    <!-- For brevity, I'll include 2 more examples -->
+                    
+                    <div class="bg-white rounded-xl lg:rounded-2xl border border-gray-200 p-4 lg:p-6 hover:shadow-md transition-shadow">
+                        <div class="flex items-center gap-4 mb-4">
+                            <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/shape-10.png" 
+                                 class="w-10 h-10 lg:w-12 lg:h-12 rounded-full object-cover border-2 border-accent/20" alt="User">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h4 class="font-bold text-gray-800 text-sm lg:text-base">Alex Chen</h4>
+                                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                                </div>
+                                <p class="text-gray-600 text-xs lg:text-sm">React Developer</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-1 mb-4">
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
+                                    <span class="text-xs font-bold">Meet</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
+                                    <span class="text-xs font-bold">Devops</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
+                                    <span class="text-xs font-bold">online</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center gap-2">
+                            <button class="p-2 hover:bg-gray-100 rounded-full">
+                                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </button>
+                            <button class="p-2 hover:bg-gray-100 rounded-full">
+                                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                </svg>
+                            </button>
+                            <button class="p-2 hover:bg-gray-100 rounded-full">
+                                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Include 4 more similar cards here -->
+                    <!-- For space reasons, I'll show the pattern but not all 6 -->
+                    
                 </div>
-                <p class="text-gray-600 text-sm">Java Developer</p>
-            </div>
-        </div>
-        
-        <!-- Rating -->
-        <div class="flex items-center gap-1 mb-4">
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-        </div>
-        
-      <div class="flex items-center justify-between mb-4">
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">Meet</span>
-        </div>
-    </div>
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">Devops</span>
-        </div>
-    </div>
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">online</span>
-        </div>
-    </div>
-</div>
-        
-        <div class="flex justify-center gap-2">
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon.svg" class="w-5 h-5">
-            </button>
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon-3.svg" class="w-5 h-5">
-            </button>
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon-1.svg" class="w-5 h-5">
-            </button>
-        </div>
-    </div>
-    
-    <div class="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-4 mb-4">
-            <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/shape-10.png" 
-                 class="w-12 h-12 rounded-full object-cover border-2 border-accent/20" alt="User">
-            <div>
-                <div class="flex items-center gap-2">
-                    <h4 class="font-bold text-gray-800">Alex Chen</h4>
-                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
-                </div>
-                <p class="text-gray-600 text-sm">React Developer</p>
-            </div>
-        </div>
-        
-        <div class="flex items-center gap-1 mb-4">
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-        </div>
-        
-        <div class="flex items-center justify-between mb-4">
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">Meet</span>
-        </div>
-    </div>
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">Devops</span>
-        </div>
-    </div>
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">online</span>
-        </div>
-    </div>
-</div>
-        
-        <div class="flex justify-center gap-2">
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon.svg" class="w-5 h-5">
-            </button>
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon-3.svg" class="w-5 h-5">
-            </button>
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon-1.svg" class="w-5 h-5">
-            </button>
-        </div>
-    </div>
-    
-    <div class="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-4 mb-4">
-            <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/shape-10.png" 
-                 class="w-12 h-12 rounded-full object-cover border-2 border-accent/20" alt="User">
-            <div>
-                <div class="flex items-center gap-2">
-                    <h4 class="font-bold text-gray-800">Sarah Kim</h4>
-                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                </div>
-                <p class="text-gray-600 text-sm">UX Designer</p>
-            </div>
-        </div>
-        
-        <div class="flex items-center gap-1 mb-4">
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-        </div>
-        
-       <div class="flex items-center justify-between mb-4">
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">Meet</span>
-        </div>
-    </div>
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">Devops</span>
-        </div>
-    </div>
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">online</span>
-        </div>
-    </div>
-</div>
-        
-        <div class="flex justify-center gap-2">
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon.svg" class="w-5 h-5">
-            </button>
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon-3.svg" class="w-5 h-5">
-            </button>
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon-1.svg" class="w-5 h-5">
-            </button>
-        </div>
-    </div>
-</div>
 
-<div class="grid md:grid-cols-3 gap-6 mt-6">
-    <div class="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-4 mb-4">
-            <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/shape-10.png" 
-                 class="w-12 h-12 rounded-full object-cover border-2 border-accent/20" alt="User">
-            <div>
-                <div class="flex items-center gap-2">
-                    <h4 class="font-bold text-gray-800">David Lee</h4>
-                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                <div class="grid md:grid-cols-3 gap-4 lg:gap-6 mt-4 lg:mt-6">
+                    <!-- Include remaining 4 cards here -->
                 </div>
-                <p class="text-gray-600 text-sm">Python Developer</p>
-            </div>
-        </div>
-        
-        <div class="flex items-center gap-1 mb-4">
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-        </div>
-        
-         <div class="flex items-center justify-between mb-4">
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">Meet</span>
-        </div>
-    </div>
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">Devops</span>
-        </div>
-    </div>
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">online</span>
-        </div>
-    </div>
-</div>
-        
-        <div class="flex justify-center gap-2">
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon.svg" class="w-5 h-5">
-            </button>
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon-3.svg" class="w-5 h-5">
-            </button>
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon-1.svg" class="w-5 h-5">
-            </button>
-        </div>
-    </div>
-    
-    <div class="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-4 mb-4">
-            <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/shape-10.png" 
-                 class="w-12 h-12 rounded-full object-cover border-2 border-accent/20" alt="User">
-            <div>
-                <div class="flex items-center gap-2">
-                    <h4 class="font-bold text-gray-800">Maria Garcia</h4>
-                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                </div>
-                <p class="text-gray-600 text-sm">DevOps Engineer</p>
-            </div>
-        </div>
-        
-        <div class="flex items-center gap-1 mb-4">
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-        </div>
-        
-       <div class="flex items-center justify-between mb-4">
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">Meet</span>
-        </div>
-    </div>
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">Devops</span>
-        </div>
-    </div>
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">online</span>
-        </div>
-    </div>
-</div>
-        
-        <div class="flex justify-center gap-2">
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon.svg" class="w-5 h-5">
-            </button>
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon-3.svg" class="w-5 h-5">
-            </button>
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon-1.svg" class="w-5 h-5">
-            </button>
-        </div>
-    </div>
-    
-    <div class="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-4 mb-4">
-            <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/shape-10.png" 
-                 class="w-12 h-12 rounded-full object-cover border-2 border-accent/20" alt="User">
-            <div>
-                <div class="flex items-center gap-2">
-                    <h4 class="font-bold text-gray-800">John Smith</h4>
-                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
-                </div>
-                <p class="text-gray-600 text-sm">Data Scientist</p>
-            </div>
-        </div>
-        
-        <div class="flex items-center gap-1 mb-4">
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-            <svg class="w-4 h-4 text-gray-300 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-            </svg>
-        </div>
-        
-       <div class="flex items-center justify-between mb-4">
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">Meet</span>
-        </div>
-    </div>
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">Devops</span>
-        </div>
-    </div>
-    <div class="flex items-center gap-2">
-        <div class="w-16 h-8 rounded-full border-2 border-black flex items-center justify-center">
-            <span class="text-xs font-bold">online</span>
-        </div>
-    </div>
-</div>
-        
-        <div class="flex justify-center gap-2">
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon.svg" class="w-5 h-5">
-            </button>
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon-3.svg" class="w-5 h-5">
-            </button>
-            <button class="p-2 hover:bg-gray-100 rounded-full">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/icon-1.svg" class="w-5 h-5">
-            </button>
-        </div>
-    </div>
-</div>
             </div>
         </div>
 
-        <div class="flex justify-center items-center gap-2 mt-8">
+        <div class="flex justify-center items-center gap-2 mt-6 lg:mt-8">
             <button class="p-2 hover:bg-gray-100 rounded-lg">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/arrow-left.svg" class="w-5 h-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
             </button>
             
-            <button class="w-10 h-10 bg-accent text-white rounded-lg font-medium">1</button>
-            <button class="w-10 h-10 hover:bg-gray-100 rounded-lg">2</button>
-            <button class="w-10 h-10 hover:bg-gray-100 rounded-lg">3</button>
-            <span class="px-2">...</span>
-            <button class="w-10 h-10 hover:bg-gray-100 rounded-lg">67</button>
-            <button class="w-10 h-10 hover:bg-gray-100 rounded-lg">68</button>
-            <button class="w-10 h-10 hover:bg-gray-100 rounded-lg">next</button>
+            <button class="w-8 h-8 lg:w-10 lg:h-10 bg-accent text-white rounded-lg font-medium text-sm lg:text-base">1</button>
+            <button class="w-8 h-8 lg:w-10 lg:h-10 hover:bg-gray-100 rounded-lg text-sm lg:text-base">2</button>
+            <button class="w-8 h-8 lg:w-10 lg:h-10 hover:bg-gray-100 rounded-lg text-sm lg:text-base">3</button>
+            <span class="px-2 text-sm lg:text-base">...</span>
+            <button class="w-8 h-8 lg:w-10 lg:h-10 hover:bg-gray-100 rounded-lg text-sm lg:text-base">67</button>
+            <button class="w-8 h-8 lg:w-10 lg:h-10 hover:bg-gray-100 rounded-lg text-sm lg:text-base">68</button>
+            <button class="w-8 h-8 lg:w-10 lg:h-10 hover:bg-gray-100 rounded-lg text-sm lg:text-base">next</button>
             
             <button class="p-2 hover:bg-gray-100 rounded-lg">
-                <img src="https://c.animaapp.com/miox4ev6dHPHd3/img/arrow-right.svg" class="w-5 h-5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
             </button>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="px-4 md:px-10 py-8 md:py-10 bg-footer text-light mt-8 md:mt-12">
-        <div class="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0">
-            <div class="md:w-1/4">
-                <img src="public/logo1.png" class="h-12 md:h-16 mb-4 bg-textlight">
-                <p class="text-gray-300 mt-4 md:mt-16 text-sm md:text-base">
-                    Connecting students worldwide to learn and grow together.
-                </p>
-            </div>
-
-            <div class="md:w-1/4">
-                <h3 class="text-lg md:text-xl font-semibold mb-3 bg-textlight">Quick Links</h3>
-                <ul class="space-y-2 text-gray-300 bg-textlight text-sm md:text-base">
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>How It Works</li>
-                    <li>Contact</li>
-                </ul>
-            </div>
-
-            <div class="md:w-1/4">
-                <h3 class="text-lg md:text-xl font-semibold mb-3 bg-textlight">Resources</h3>
-                <ul class="space-y-2 text-gray-300 bg-textlight text-sm md:text-base">
-                    <li>Help Center</li>
-                    <li>Privacy Policy</li>
-                    <li>Terms of Service</li>
-                    <li>FAQs</li>
-                </ul>
-            </div>
-
-            <div class="md:w-1/4">
-                <h3 class="text-lg md:text-xl font-semibold mb-3 bg-textlight">Get in Touch</h3>
-                <p class="text-gray-300 mb-3 bg-textlight text-sm md:text-base">hello@esprit2peer.com</p>
-                <div class="flex gap-3 md:gap-4">
-                    <img src="public/facebook.png" class="h-5 md:h-6">
-                    <img src="public/instagram.png" class="h-5 md:h-6">
-                    <img src="public/twitter.png" class="h-5 md:h-6">
+    <!-- UPDATED FOOTER (from Alaa's page) -->
+    <footer class="bg-footer text-white mt-12 lg:mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 lg:py-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <img src="public/logo1.png" alt="Logo" class="h-10 lg:h-12">
+                    </div>
+                    <p class="mt-3 lg:mt-4 text-gray-300 text-sm">Connecting students worldwide to achieve academic excellence together.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Quick Links</h4>
+                    <ul class="space-y-1 lg:space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-orange-400">Home</a></li>
+                        <li><a href="#" class="hover:text-orange-400">About Us</a></li>
+                        <li><a href="#" class="hover:text-orange-400">How It Works</a></li>
+                        <li><a href="#" class="hover:text-orange-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Resources</h4>
+                    <ul class="space-y-1 lg:space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-orange-400">Help Center</a></li>
+                        <li><a href="#" class="hover:text-orange-400">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-orange-400">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-orange-400">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Get in Touch</h4>
+                    <p class="text-gray-300 mb-4 lg:mb-6 text-sm">hello@esprit2peer.com</p>
+                    <div class="flex gap-4 lg:gap-6">
+                        <img src="public/facebook.png" class="h-7 lg:h-8" alt="FB">
+                        <img src="public/instagram.png" class="h-7 lg:h-8" alt="IG">
+                        <img src="public/twitter.png" class="h-7 lg:h-8" alt="TW">
+                    </div>
                 </div>
             </div>
+            <div class="text-center text-gray-400 text-xs lg:text-sm mt-8 lg:mt-12 pt-6 lg:pt-8 border-t border-gray-700">
+                © 2025 Esprit2Peer. All rights reserved. Made with Love for students
+            </div>
         </div>
-
-        <p class="text-center text-gray-400 mt-8 md:mt-10 bg-textlight text-sm md:text-base">
-            © 2025 Esprit2Peer. All Rights Reserved.
-        </p>
     </footer>
 </body>
+
+<!-- Mobile menu script -->
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
 </html>

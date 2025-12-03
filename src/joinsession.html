@@ -3,54 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Esprit2Peer</title>
+  <title>Focus • Esprit2Peer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="file.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
 </head>
-<body class="bg-primary text-text font-sans w-full mt-15">
+<body class="bg-primary text-text min-h-screen">
 
-  <header class="flex flex-wrap justify-between items-center px-4 sm:px-6 md:px-8 py-4 bg-footer rounded-xl mx-4 sm:mx-6 md:mx-12 mt-4 shadow-md relative">
+  <!-- UPDATED HEADER WITH MOBILE MENU (from Alaa's page) -->
+  <header class="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 bg-footer rounded-xl mx-4 sm:mx-8 lg:mx-12 mt-4 shadow-md">
     <img src="public/logo.png" class="h-10 sm:h-12" alt="Logo">
-
-    <button class="md:hidden text-white text-2xl" onclick="toggleMenu()">☰</button>
-
-    <nav id="mainNav" class="hidden md:flex nav-gap-51 text-white text-base lg:text-lg font-regular">
-      <a href="#" class="hover:text-orange-400">Home</a>
-      <a href="#" class="hover:text-orange-400">Planner</a>
-      <a href="#" class="hover:text-orange-400">Match Making</a>
-      <a href="#" class="hover:text-orange-400">Focus</a>
-      <a href="#" class="hover:text-orange-400">Analytics</a>
-      <a href="#" class="hover:text-orange-400">Forum</a>
+    <nav class="hidden lg:flex gap-6 xl:gap-8 text-white text-lg font-regular">
+      <a href="/src/home.html" class="hover:text-orange-400">Home</a>
+      <a href="/src/calandar2.html" class="hover:text-orange-400">Planner</a>
+      <a href="/src/matchmaking.html" class="hover:text-orange-400">Matchmaking</a>
+      <a href="/src/joinsession.html" class="text-orange-400">Focus</a>
+      <a href="/src/Analytics.html" class="hover:text-orange-400">Analytics</a>
+      <a href="/src/forum.html" class="hover:text-orange-400">Forum</a>
     </nav>
-
-    <div class="flex items-center gap-2 sm:gap-4">
-      <button class="relative">
-        <img src="public/notification.png" class="h-5 sm:h-6">
+    <div class="flex items-center gap-3 sm:gap-5">
+      <button class="text-white hover:text-orange-300 transition hidden sm:block">
+        <span class="material-symbols-outlined text-2xl sm:text-3xl">notifications</span>
       </button>
-      <button class="relative">
-        <img src="public/parametres.png" class="h-5 sm:h-6">
+      <button class="text-white hover:text-orange-300 transition hidden sm:block">
+        <span class="material-symbols-outlined text-2xl sm:text-3xl">settings</span>
       </button>
-      <img src="public/user.png" class="h-10 w-10 sm:h-12 sm:w-14 rounded-full" alt="User">
+      <a href="/src/profilUser.html">
+        <img src="public/f2.png" 
+             alt="User Avatar" 
+             class="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover cursor-pointer hover:opacity-80 transition">
+      </a>
+      <button id="mobile-menu-button" class="lg:hidden text-white">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
     </div>
-
-    <nav id="mobileNav" class="hidden w-full mt-4 flex-col gap-3 text-white text-base md:hidden">
-      <a href="#" class="hover:text-orange-400 py-2">Home</a>
-      <a href="#" class="hover:text-orange-400 py-2">Planner</a>
-      <a href="#" class="hover:text-orange-400 py-2">Match Making</a>
-      <a href="#" class="hover:text-orange-400 py-2">Focus</a>
-      <a href="#" class="hover:text-orange-400 py-2">Analytics</a>
-      <a href="#" class="hover:text-orange-400 py-2">Forum</a>
-    </nav>
   </header>
 
-  <main class="flex flex-col lg:flex-row mx-4 sm:mx-6 md:mx-12 mt-6 md:mt-10 gap-6 md:gap-14 justify-center items-start">
-    <div class="w-full lg:flex-1 bg-bgCard rounded-3xl p-4 sm:p-6 shadow-lg h-auto max-h-[600px] overflow-y-auto">
-      <section class="p-2 sm:p-4 md:p-8 bg-bgCard min-h-screen">
-        <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center">Join Study Sessions</h2>
+  <!-- MOBILE MENU (from Alaa's page) -->
+  <div id="mobile-menu" class="mobile-menu lg:hidden bg-footer rounded-xl mx-4 sm:mx-8 mt-2 px-6 py-4 hidden">
+    <nav class="flex flex-col gap-4 text-white">
+      <a href="/src/home.html" class="hover:text-orange-400 py-2">Home</a>
+      <a href="/src/calandar2.html" class="hover:text-orange-400 py-2">Planner</a>
+      <a href="/src/matchmaking.html" class="hover:text-orange-400 py-2">Matchmaking</a>
+      <a href="/src/joinsession.html" class="text-orange-400 py-2">Focus</a>
+      <a href="/src/Analytics.html" class="hover:text-orange-400 py-2">Analytics</a>
+      <a href="/src/forum.html" class="hover:text-orange-400 py-2">Forum</a>
+    </nav>
+    <div class="flex justify-center gap-6 mt-4 sm:hidden">
+      <button class="text-white hover:text-orange-300 transition">
+        <span class="material-symbols-outlined text-2xl">notifications</span>
+      </button>
+      <button class="text-white hover:text-orange-300 transition">
+        <span class="material-symbols-outlined text-2xl">settings</span>
+      </button>
+    </div>
+  </div>
 
-        <div class="bg-bgCard rounded-lg p-3 sm:p-4 shadow-sm">
+  <main class="flex flex-col lg:flex-row mx-4 sm:mx-6 lg:mx-8 mt-6 lg:mt-8 gap-6 lg:gap-8 justify-center items-start">
+    <div class="w-full lg:flex-1 bg-bgCard rounded-xl lg:rounded-2xl p-4 sm:p-6 shadow-lg h-auto lg:max-h-[600px] overflow-y-auto">
+      <section class="p-2 sm:p-4 lg:p-6 bg-bgCard">
+        <h2 class="text-xl lg:text-2xl font-bold mb-4 lg:mb-6 text-center">Join Study Sessions</h2>
+
+        <div class="bg-bgCard rounded-lg p-3 sm:p-4 shadow-sm mb-4">
           <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">
-            <p class="font-semibold text-gray-900 text-base sm:text-lg">Math Revision</p>
+            <p class="font-semibold text-gray-900 text-base lg:text-lg">Math Revision</p>
             <div class="flex -space-x-2">
               <img src="public/g2.png" class="h-6 w-6 sm:h-8 sm:w-8 rounded-full border border-white" />
               <img src="public/g4.png" class="h-6 w-6 sm:h-8 sm:w-8 rounded-full border border-white" />
@@ -62,7 +80,7 @@
             <div class="flex items-center gap-3">
               <img src="public/f2.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" alt="Imen Bouchriha">
               <div>
-                <p class="text-gray-800 font-medium text-sm sm:text-base">Imen Bouchriha</p>
+                <p class="text-gray-800 font-medium text-sm lg:text-base">Imen Bouchriha</p>
                 <div class="flex gap-0.5 mt-1">
                   <img src="public/etoile.png" class="h-3 w-3 sm:h-4 sm:w-4">
                   <img src="public/etoile.png" class="h-3 w-3 sm:h-4 sm:w-4">
@@ -72,17 +90,18 @@
                 </div>
               </div>
             </div>
-            <label for="joinToggle1" class="button text-white px-4 sm:px-6 py-2 rounded-full cursor-pointer text-sm sm:text-base whitespace-nowrap w-full sm:w-auto text-center">
-              Join From Here
-            </label>
+            <a href="PrivateSession.html" class="button text-white px-4 sm:px-6 py-2 rounded-full cursor-pointer text-sm lg:text-base whitespace-nowrap w-full sm:w-auto text-center inline-block">
+  Join From Here
+</a>
+
           </div>
         </div>
 
-        <hr class="w-1/2 mx-auto gradient-hr">
+        <hr class="w-1/2 mx-auto gradient-hr my-4">
 
-        <div class="bg-bgCard rounded-lg p-3 sm:p-4 shadow-sm">
+        <div class="bg-bgCard rounded-lg p-3 sm:p-4 shadow-sm mb-4">
           <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">
-            <p class="font-semibold text-gray-900 text-base sm:text-lg">Java Revision</p>
+            <p class="font-semibold text-gray-900 text-base lg:text-lg">Java Revision</p>
             <div class="flex -space-x-2">
               <img src="public/f6.png" class="h-6 w-6 sm:h-8 sm:w-8 rounded-full border border-white" />
               <img src="public/f1.png" class="h-6 w-6 sm:h-8 sm:w-8 rounded-full border border-white" />
@@ -94,7 +113,7 @@
             <div class="bg-bgCard flex items-center gap-3">
               <img src="public/g6.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" alt="Ahmed Ben Ahmed">
               <div>
-                <p class="text-gray-800 font-medium text-sm sm:text-base">Ahmed Ben Ahmed</p>
+                <p class="text-gray-800 font-medium text-sm lg:text-base">Ahmed Ben Ahmed</p>
                 <div class="flex gap-0.5 mt-1">
                   <img src="public/etoile.png" class="h-3 w-3 sm:h-4 sm:w-4">
                   <img src="public/etoile.png" class="h-3 w-3 sm:h-4 sm:w-4">
@@ -103,17 +122,17 @@
                 </div>
               </div>
             </div>
-            <label for="joinToggle1" class="button text-white px-4 sm:px-6 py-2 rounded-full cursor-pointer text-sm sm:text-base whitespace-nowrap w-full sm:w-auto text-center">
+            <label for="joinToggle1" class="button text-white px-4 sm:px-6 py-2 rounded-full cursor-pointer text-sm lg:text-base whitespace-nowrap w-full sm:w-auto text-center">
               Join From Here
             </label>
           </div>
         </div>
 
-        <hr class="w-1/2 mx-auto gradient-hr">
+        <hr class="w-1/2 mx-auto gradient-hr my-4">
 
-        <div class="bg-bgCard rounded-lg p-3 sm:p-4 shadow-sm">
+        <div class="bg-bgCard rounded-lg p-3 sm:p-4 shadow-sm mb-4">
           <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">
-            <p class="font-semibold text-gray-900 text-base sm:text-lg">Angular Revision</p>
+            <p class="font-semibold text-gray-900 text-base lg:text-lg">Angular Revision</p>
             <div class="flex -space-x-2">
               <img src="public/g1.png" class="h-6 w-6 sm:h-8 sm:w-8 rounded-full border border-white" />
               <img src="public/f4.png" class="h-6 w-6 sm:h-8 sm:w-8 rounded-full border border-white" />
@@ -125,7 +144,7 @@
             <div class="flex items-center gap-3">
               <img src="public/f5.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" alt="Alaa Ben Jeddi">
               <div>
-                <p class="text-gray-800 font-medium text-sm sm:text-base">Alaa Ben Jeddi</p>
+                <p class="text-gray-800 font-medium text-sm lg:text-base">Alaa Ben Jeddi</p>
                 <div class="flex gap-0.5 mt-1">
                   <img src="public/etoile.png" class="h-3 w-3 sm:h-4 sm:w-4">
                   <img src="public/etoile.png" class="h-3 w-3 sm:h-4 sm:w-4">
@@ -135,17 +154,17 @@
                 </div>
               </div>
             </div>
-            <label for="joinToggle1" class="button text-white px-4 sm:px-6 py-2 rounded-full cursor-pointer text-sm sm:text-base whitespace-nowrap w-full sm:w-auto text-center">
+            <label for="joinToggle1" class="button text-white px-4 sm:px-6 py-2 rounded-full cursor-pointer text-sm lg:text-base whitespace-nowrap w-full sm:w-auto text-center">
               Join From Here
             </label>
           </div>
         </div>
 
-        <hr class="w-1/2 mx-auto gradient-hr">
+        <hr class="w-1/2 mx-auto gradient-hr my-4">
 
-        <div class="bg-bgCard rounded-lg p-3 sm:p-4 shadow-sm">
+        <div class="bg-bgCard rounded-lg p-3 sm:p-4 shadow-sm mb-4">
           <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">
-            <p class="font-semibold text-gray-900 text-base sm:text-lg">Math Revision</p>
+            <p class="font-semibold text-gray-900 text-base lg:text-lg">Math Revision</p>
             <div class="flex -space-x-2">
               <img src="public/f1.png" class="h-6 w-6 sm:h-8 sm:w-8 rounded-full border border-white" />
               <img src="public/g1.png" class="h-6 w-6 sm:h-8 sm:w-8 rounded-full border border-white" />
@@ -157,7 +176,7 @@
             <div class="flex items-center gap-3">
               <img src="public/f2.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" alt="Imen Bouchriha">
               <div>
-                <p class="text-gray-800 font-medium text-sm sm:text-base">Imen Bouchriha</p>
+                <p class="text-gray-800 font-medium text-sm lg:text-base">Imen Bouchriha</p>
                 <div class="flex gap-0.5 mt-1">
                   <img src="public/etoile.png" class="h-3 w-3 sm:h-4 sm:w-4">
                   <img src="public/etoile.png" class="h-3 w-3 sm:h-4 sm:w-4">
@@ -167,24 +186,24 @@
                 </div>
               </div>
             </div>
-            <label for="joinToggle1" class="button text-white px-4 sm:px-6 py-2 rounded-full cursor-pointer text-sm sm:text-base whitespace-nowrap w-full sm:w-auto text-center">
+            <label for="joinToggle1" class="button text-white px-4 sm:px-6 py-2 rounded-full cursor-pointer text-sm lg:text-base whitespace-nowrap w-full sm:w-auto text-center">
               Join From Here
             </label>
           </div>
         </div>
 
-        <hr class="w-1/2 mx-auto gradient-hr">
+        <hr class="w-1/2 mx-auto gradient-hr my-4">
       </section>
     </div>
 
-    <div class="w-full lg:w-[500px] bg-bgCard rounded-3xl p-4 sm:p-6 shadow-md h-auto lg:h-[600px] flex flex-col justify-between mb-6 lg:mb-0 lg:ml-0 lg:mr-10">
-      <h2 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center text-gray-900">
+    <div class="w-full lg:w-[500px] bg-bgCard rounded-xl lg:rounded-2xl p-4 sm:p-6 shadow-md h-auto lg:h-[600px] flex flex-col justify-between mb-6 lg:mb-0">
+      <h2 class="text-xl lg:text-2xl font-bold mb-4 lg:mb-6 text-center text-gray-900">
         Create Your Session
       </h2>
 
-      <div class="button2 rounded-xl px-4 py-3 text-white shadow flex justify-between items-center -mb-4">
+      <div class="button2 rounded-xl lg:rounded-2xl px-4 py-3 text-white shadow flex justify-between items-center -mb-4">
         <div>
-          <p class="font-semibold text-base sm:text-lg">Report Writing</p>
+          <p class="font-semibold text-base lg:text-lg">Report Writing</p>
           <p class="text-xs opacity-80 -mt-1">Public Session</p>
         </div>
 
@@ -195,15 +214,15 @@
         </label>
       </div>
 
-      <label for="addToggle1" class="flex justify-end text-xl sm:text-2xl cursor-pointer font-bold mt-1 -mb-6 -mr-2 sm:-mr-4">+</label>
+      <label for="addToggle1" class="flex justify-end text-xl lg:text-2xl cursor-pointer font-bold mt-1 -mb-6 -mr-2 sm:-mr-4">+</label>
 
       <div class="-mt-4">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-          <span class="text-gray-800 text-sm sm:text-base">Create a Structure</span>
+          <span class="text-gray-800 text-sm lg:text-base">Create a Structure</span>
           <div class="bg-icon flex items-center gap-2 px-3 py-1 rounded-lg shadow-sm w-full sm:w-auto justify-end sm:mr-4">
             <img src="public/horloge.png" class="w-4 h-4 sm:w-5 sm:h-5 opacity-80 -mr-8">
             <div class="bg-icon flex items-center gap-1">
-              <input value="00:30:00" class="bg-transparent outline-none w-20 sm:w-24 text-right text-sm sm:text-base" />
+              <input value="00:30:00" class="bg-transparent outline-none w-20 sm:w-24 text-right text-sm lg:text-base" />
               <div class="flex flex-col ml-2">
                 <img src="public/haut.png" class="w-3 h-3 opacity-80 cursor-pointer">
                 <img src="public/bas.png" class="w-3 h-3 opacity-80 cursor-pointer">
@@ -216,11 +235,11 @@
 
       <div class="mt-4">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-          <span class="text-gray-800 text-sm sm:text-base">Report Writing</span>
+          <span class="text-gray-800 text-sm lg:text-base">Report Writing</span>
           <div class="flex items-center gap-2 bg-icon px-3 py-1 rounded-lg shadow-sm w-full sm:w-auto justify-end sm:mr-4">
             <img src="public/horloge.png" class="w-4 h-4 sm:w-5 sm:h-5 opacity-80 -mr-8">
             <div class="flex items-center gap-1">
-              <input value="00:30:00" class="bg-transparent outline-none w-20 sm:w-24 text-right text-sm sm:text-base" />
+              <input value="00:30:00" class="bg-transparent outline-none w-20 sm:w-24 text-right text-sm lg:text-base" />
               <div class="flex flex-col ml-2">
                 <img src="public/haut.png" class="w-3 h-3 opacity-80 cursor-pointer">
                 <img src="public/bas.png" class="w-3 h-3 opacity-80 cursor-pointer">
@@ -233,11 +252,11 @@
 
       <div class="mt-4">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-          <span class="text-gray-800 text-sm sm:text-base">Report Formatting</span>
+          <span class="text-gray-800 text-sm lg:text-base">Report Formatting</span>
           <div class="flex items-center gap-2 bg-icon px-3 py-1 rounded-lg shadow-sm w-full sm:w-auto justify-end sm:mr-4">
             <img src="public/horloge.png" class="w-4 h-4 sm:w-5 sm:h-5 opacity-80 -mr-8">
             <div class="flex items-center gap-1">
-              <input value="00:30:00" class="bg-transparent outline-none w-20 sm:w-24 text-right text-sm sm:text-base" />
+              <input value="00:30:00" class="bg-transparent outline-none w-20 sm:w-24 text-right text-sm lg:text-base" />
               <div class="flex flex-col ml-2">
                 <img src="public/haut.png" class="w-3 h-3 opacity-80 cursor-pointer">
                 <img src="public/bas.png" class="w-3 h-3 opacity-80 cursor-pointer">
@@ -248,13 +267,16 @@
         <hr class="w-1/2 mx-auto gradient-hr">
       </div>
 
-      <div class="flex flex-col sm:flex-row justify-between mt-6 sm:mt-8 gap-3">
-        <button class="button text-white px-6 py-2 rounded-full shadow-md text-sm sm:text-base">
+      <div class="flex flex-col sm:flex-row justify-between mt-6 lg:mt-8 gap-3">
+        <button class="button text-white px-5 sm:px-6 py-2 rounded-full shadow-md text-sm lg:text-base">
           Save Plan
         </button>
-        <button class="button2 text-white px-6 py-2 rounded-full shadow-md text-sm sm:text-base">
-          Start Now >
-        </button>
+        <a href="/src/PublicSession1.html">
+  <button class="button2 text-white px-5 sm:px-6 py-2 rounded-full shadow-md text-sm lg:text-base">
+    Start Now
+  </button>
+</a>
+
       </div>
     </div>
   </main>
@@ -262,61 +284,70 @@
   <!-- Modal JOIN -->
   <input type="checkbox" id="joinToggle1" class="peer hidden" />
 
-  <div class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center scale-0 peer-checked:scale-100 transition-transform z-50 px-4">
-    <div class="bg-white rounded-2xl p-4 sm:p-6 w-full max-w-xs sm:max-w-sm shadow-lg opacity-80">
-      <h2 class="text-lg sm:text-xl font-bold mb-4 text-center">You want to join this session?</h2>
-      <div class="flex justify-between gap-3 sm:gap-4">
-        <label for="joinToggle1" class="w-1/2 button text-gray-800 py-2 rounded-lg text-center cursor-pointer text-sm sm:text-base">Yes</label>
-        <label for="joinToggle1" class="w-1/2 button2 text-white py-2 rounded-lg text-center cursor-pointer text-sm sm:text-base">No</label>
-      </div>
+ <div class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center scale-0 peer-checked:scale-100 transition-transform z-50 px-4">
+  <div class="bg-white rounded-xl lg:rounded-2xl p-4 sm:p-6 w-full max-w-xs sm:max-w-sm shadow-lg opacity-80">
+    <h2 class="text-lg lg:text-xl font-bold mb-4 text-center">You want to join this session?</h2>
+    <div class="flex justify-between gap-3 sm:gap-4">
+      <a href="/src/PublicSession2.html" class="w-1/2 button text-gray-800 py-2 rounded-lg text-center text-sm lg:text-base">
+        Yes
+      </a>
+      <label for="joinToggle1" class="w-1/2 button2 text-white py-2 rounded-lg text-center cursor-pointer text-sm lg:text-base">
+        No
+      </label>
     </div>
   </div>
+</div>
 
-  <footer class="px-4 sm:px-6 md:px-10 py-8 md:py-10 bg-footer text-light mt-8">
-    <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-8">
-      <div class="text-center md:text-left">
-        <img src="public/logo1.png" class="h-12 sm:h-16 mb-4 bg-textlight mx-auto md:mx-0">
-        <p class="max-w-xs text-gray-300 text-sm sm:text-base mx-auto md:mx-0 md:mt-16">
-          Connecting students worldwide to learn and grow together.
-        </p>
-      </div>
 
-      <div class="text-center md:text-left">
-        <h3 class="text-lg sm:text-xl font-semibold mb-2 bg-textlight">Quick Links</h3>
-        <ul class="space-y-1 text-gray-300 bg-textlight text-sm sm:text-base">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>How It Works</li>
-          <li>Contact</li>
-        </ul>
-      </div>
-
-      <div class="text-center md:text-left">
-        <h3 class="text-lg sm:text-xl font-semibold mb-2 bg-textlight">Resources</h3>
-        <ul class="space-y-1 text-gray-300 bg-textlight text-sm sm:text-base">
-          <li>Help Center</li>
-          <li>Privacy Policy</li>
-          <li>Terms of Service</li>
-          <li>FAQs</li>
-        </ul>
-      </div>
-
-      <div class="text-center md:text-left">
-        <h3 class="text-lg sm:text-xl font-semibold mb-2 bg-textlight">Get in Touch</h3>
-        <p class="text-gray-300 mb-3 bg-textlight text-sm sm:text-base">hello@esprit2peer.com</p>
-        <div class="flex gap-4 justify-center md:justify-start">
-          <img src="public/facebook.png" class="h-5 sm:h-6">
-          <img src="public/instagram.png" class="h-5 sm:h-6">
-          <img src="public/twitter.png" class="h-5 sm:h-6">
+  <!-- UPDATED FOOTER (from Alaa's page) -->
+  <footer class="bg-footer text-white mt-12 lg:mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 lg:py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div class="sm:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-3">
+            <img src="public/logo1.png" alt="Logo" class="h-10 lg:h-12">
+          </div>
+          <p class="mt-3 lg:mt-4 text-gray-300 text-sm">Connecting students worldwide to achieve academic excellence together.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Quick Links</h4>
+          <ul class="space-y-1 lg:space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-orange-400">Home</a></li>
+            <li><a href="#" class="hover:text-orange-400">About Us</a></li>
+            <li><a href="#" class="hover:text-orange-400">How It Works</a></li>
+            <li><a href="#" class="hover:text-orange-400">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Resources</h4>
+          <ul class="space-y-1 lg:space-y-2 text-sm text-gray-300">
+            <li><a href="#" class="hover:text-orange-400">Help Center</a></li>
+            <li><a href="#" class="hover:text-orange-400">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-orange-400">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-orange-400">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="sm:col-span-2 lg:col-span-1">
+          <h4 class="font-semibold text-base lg:text-lg mb-3 lg:mb-4">Get in Touch</h4>
+          <p class="text-gray-300 mb-4 lg:mb-6 text-sm">hello@esprit2peer.com</p>
+          <div class="flex gap-4 lg:gap-6">
+            <img src="public/facebook.png" class="h-7 lg:h-8" alt="FB">
+            <img src="public/instagram.png" class="h-7 lg:h-8" alt="IG">
+            <img src="public/twitter.png" class="h-7 lg:h-8" alt="TW">
+          </div>
         </div>
       </div>
+      <div class="text-center text-gray-400 text-xs lg:text-sm mt-8 lg:mt-12 pt-6 lg:pt-8 border-t border-gray-700">
+        © 2025 Esprit2Peer. All rights reserved. Made with Love for students
+      </div>
     </div>
-
-    <p class="text-center text-gray-400 mt-8 md:mt-10 bg-textlight text-sm sm:text-base">
-      © 2025 Esprit2Peer. All Rights Reserved.
-    </p>
   </footer>
 
- 
+  <!-- Mobile menu script -->
+  <script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>

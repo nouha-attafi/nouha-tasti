@@ -17,12 +17,12 @@
   <header class="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 bg-footer rounded-xl mx-4 sm:mx-8 lg:mx-12 mt-4 shadow-md">
     <img src="public/logo.png" class="h-10 sm:h-12" alt="Logo">
     <nav class="hidden lg:flex gap-6 xl:gap-8 text-white text-lg font-regular">
-      <a href="#" class="hover:text-orange-400">Home</a>
-      <a href="#" class="hover:text-orange-400">Planner</a>
-      <a href="#" class="hover:text-orange-400">Matchmaking</a>
-      <a href="#" class="hover:text-orange-400">Focus</a>
-      <a href="#" class="hover:text-orange-400">Analytics</a>
-      <a href="forum.html" class="text-orange-400">Forum</a>
+      <a href="/src/home.html" class="hover:text-orange-400">Home</a>
+      <a href="/src/calandar2.html" class="hover:text-orange-400">Planner</a>
+      <a href="/src/matchmaking.html" class="text-orange-400">Matchmaking</a>
+      <a href="/src/joinsession.html" class="hover:text-orange-400">Focus</a>
+      <a href="/src/Analytics.html" class="hover:text-orange-400">Analytics</a>
+      <a href="/src/forum.html" class="hover:text-orange-400">Forum</a>
     </nav>
     <div class="flex items-center gap-3 sm:gap-5">
       <button class="text-white hover:text-orange-300 transition hidden sm:block">
@@ -31,7 +31,11 @@
       <button class="text-white hover:text-orange-300 transition hidden sm:block">
         <span class="material-symbols-outlined text-2xl sm:text-3xl">settings</span>
       </button>
-      <img src="public/f2.png" alt="User Avatar" class="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover">
+<a href="/src/profilUser.html">
+  <img src="public/f2.png" 
+       alt="User Avatar" 
+       class="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover cursor-pointer hover:opacity-80 transition">
+</a>
       <button id="mobile-menu-button" class="lg:hidden text-white">
         <span class="material-symbols-outlined text-3xl">menu</span>
       </button>
@@ -40,12 +44,12 @@
 
   <div id="mobile-menu" class="mobile-menu lg:hidden bg-footer rounded-xl mx-4 sm:mx-8 mt-2 px-6 py-4 hidden">
     <nav class="flex flex-col gap-4 text-white">
-      <a href="#" class="hover:text-orange-400 py-2">Home</a>
-      <a href="#" class="hover:text-orange-400 py-2">Planner</a>
-      <a href="#" class="hover:text-orange-400 py-2">Match Making</a>
-      <a href="#" class="hover:text-orange-400 py-2">Focus</a>
-      <a href="#" class="text-orange-400 py-2">Analytics</a>
-      <a href="#" class="hover:text-orange-400 py-2">Forum</a>
+      <a href="/src/home.html" class="hover:text-orange-400 py-2">Home</a>
+      <a href="/src/calandar2.html" class="hover:text-orange-400 py-2">Planner</a>
+      <a href="/src//matchmaking.html" class="text-orange-400 py-2">Matchmaking</a>
+      <a href="/src/joinsession.html" class="hover:text-orange-400 py-2">Focus</a>
+      <a href="/src/Analytics.html" class="hover:text-orange-400 py-2">Analytics</a>
+      <a href="/src/forum.html" class="hover:text-orange-400 py-2">Forum</a>
     </nav>
     <div class="flex justify-center gap-6 mt-4 sm:hidden">
       <button class="text-white hover:text-orange-300 transition">
@@ -75,10 +79,19 @@
         </div>
 
         <!-- Action Buttons -->
-        <div class="flex gap-4">
-          <button  class="bg-accent button rounded-full text-white flex-1 py-3   text-sm lg:text-base">Reject</button>
-          <button  class="  rounded-full  button2       flex-1 py-3 text-sm lg:text-base">Accept</button>
-        </div>
+      <div class="flex gap-4">
+  <a href="/src/matchmaking.html" class="flex-1">
+    <button class="w-full bg-accent button rounded-full text-white py-3 text-sm lg:text-base">
+      Reject
+    </button>
+  </a>
+  <a href="/src/matchmaking.html" class="flex-1">
+    <button class="w-full rounded-full button2 py-3 text-sm lg:text-base">
+      Accept
+    </button>
+  </a>
+</div>
+
 
         <!-- Favorite Time -->
         <div class="text-center py-4 border-t border-gray-200">

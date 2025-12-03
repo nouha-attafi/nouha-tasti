@@ -9,20 +9,19 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="file.css" />
-  
 </head>
-<body class="bg-primary min-h-screen flex flex-col text-gray-800">
+<body class="bg-primary text-text min-h-screen">
 
-  <!-- HEADER (100% identical to your Feedback page) -->
+  <!-- UPDATED HEADER WITH MOBILE MENU (from Alaa's page) -->
   <header class="flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4 bg-footer rounded-xl mx-4 sm:mx-8 lg:mx-12 mt-4 shadow-md">
     <img src="public/logo.png" class="h-10 sm:h-12" alt="Logo">
     <nav class="hidden lg:flex gap-6 xl:gap-8 text-white text-lg font-regular">
-      <a href="#" class="hover:text-orange-400">Home</a>
-      <a href="#" class="hover:text-orange-400">Planner</a>
-      <a href="#" class="hover:text-orange-400">Matchmaking</a>
-      <a href="#" class="hover:text-orange-400">Focus</a>
-      <a href="#" class="hover:text-orange-400">Analytics</a>
-      <a href="forum.html" class="text-orange-400">Forum</a>
+      <a href="/src/home.html" class="hover:text-orange-400">Home</a>
+      <a href="/src/calandar2.html" class="hover:text-orange-400">Planner</a>
+      <a href="/src/matchmaking.html" class="hover:text-orange-400">Matchmaking</a>
+      <a href="/src/joinsession.html" class="hover:text-orange-400">Focus</a>
+      <a href="/src/Analytics.html" class="hover:text-orange-400">Analytics</a>
+      <a href="/src/forum.html" class="text-orange-400">Forum</a>
     </nav>
     <div class="flex items-center gap-3 sm:gap-5">
       <button class="text-white hover:text-orange-300 transition hidden sm:block">
@@ -31,26 +30,34 @@
       <button class="text-white hover:text-orange-300 transition hidden sm:block">
         <span class="material-symbols-outlined text-2xl sm:text-3xl">settings</span>
       </button>
-      <img src="public/f2.png" alt="User Avatar" class="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover">
+      <a href="/src/profilUser.html">
+        <img src="public/f2.png" 
+             alt="User Avatar" 
+             class="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover cursor-pointer hover:opacity-80 transition">
+      </a>
       <button id="mobile-menu-button" class="lg:hidden text-white">
         <span class="material-symbols-outlined text-3xl">menu</span>
       </button>
     </div>
   </header>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="lg:hidden bg-footer rounded-xl mx-4 sm:mx-8 mt-2 px-6 py-4 hidden">
+  <!-- MOBILE MENU (from Alaa's page) -->
+  <div id="mobile-menu" class="mobile-menu lg:hidden bg-footer rounded-xl mx-4 sm:mx-8 mt-2 px-6 py-4 hidden">
     <nav class="flex flex-col gap-4 text-white">
-      <a href="#" class="hover:text-orange-400 py-2">Home</a>
-      <a href="#" class="hover:text-orange-400 py-2">Planner</a>FFA897
-      <a href="#" class="hover:text-orange-400 py-2">Match Making</a>
-      <a href="#" class="hover:text-orange-400 py-2">Focus</a>
-      <a href="#" class="hover:text-orange-400 py-2">Analytics</a>
-      <a href="#" class="text-orange-400 py-2">Forum</a>
+      <a href="/src/home.html" class="hover:text-orange-400 py-2">Home</a>
+      <a href="/src/calandar2.html" class="hover:text-orange-400 py-2">Planner</a>
+      <a href="/src/matchmaking.html" class="hover:text-orange-400 py-2">Matchmaking</a>
+      <a href="/src/joinsession.html" class="hover:text-orange-400 py-2">Focus</a>
+      <a href="/src/Analytics.html" class="hover:text-orange-400 py-2">Analytics</a>
+      <a href="/src/forum.html" class="text-orange-400 py-2">Forum</a>
     </nav>
-    <div class="flex justify-center gap-6 mt-4">
-      <button class="text-white hover:text-orange-300"><span class="material-symbols-outlined text-2xl">notifications</span></button>
-      <button class="text-white hover:text-orange-300"><span class="material-symbols-outlined text-2xl">settings</span></button>
+    <div class="flex justify-center gap-6 mt-4 sm:hidden">
+      <button class="text-white hover:text-orange-300 transition">
+        <span class="material-symbols-outlined text-2xl">notifications</span>
+      </button>
+      <button class="text-white hover:text-orange-300 transition">
+        <span class="material-symbols-outlined text-2xl">settings</span>
+      </button>
     </div>
   </div>
 
@@ -58,37 +65,37 @@
   <main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
     <!-- Forum Title (moved outside of the card) -->
     <div class="mb-6">
-      <h1 class="text-4xl font-bold text-[var(--footer-bg)]">Forum</h1>
-      <p class="text-gray-600 mt-2">Ask questions, share knowledge, and help each other learn</p>
+      <h1 class="text-3xl lg:text-4xl font-bold text-[var(--footer-bg)]">Forum</h1>
+      <p class="text-gray-600 mt-2 text-sm lg:text-base">Ask questions, share knowledge, and help each other learn</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
       <!-- Posts Section -->
       <section class="lg:col-span-2 space-y-6">
         <!-- Post 1 -->
-        <article class="bg-white rounded-xl shadow-sm p-6">
+        <article class="bg-white rounded-xl lg:rounded-2xl shadow-sm p-6">
           <div class="flex items-start gap-4">
-            <img src="public/f1.png" alt="Ahmed Ben Salem" class="w-12 h-12 rounded-full object-cover">
+            <img src="public/f1.png" alt="Ahmed Ben Salem" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full object-cover">
             <div class="flex-1">
-              <div class="flex items-center gap-3 text-sm">
-                <span class="font-semibold text-[var(--footer-bg)]">Ahmed Ben Salem</span>
-                <span class="text-gray-500">2 hours ago</span>
-                <span class="bg-[var(--color-tags)] text-teal-700 text-xs  px-3 py-1 rounded-full">Computer Science</span>
+              <div class="flex flex-wrap items-center gap-2 lg:gap-3 text-sm">
+                <span class="font-semibold text-[var(--footer-bg)] text-sm lg:text-base">Ahmed Ben Salem</span>
+                <span class="text-gray-500 text-xs lg:text-sm">2 hours ago</span>
+                <span class="bg-[var(--color-tags)] text-teal-700 text-xs px-2 lg:px-3 py-1 rounded-full">Computer Science</span>
               </div>
-              <h2 class="text-xl font-semibold mt-2 text-[var(--footer-bg)]">How to implement binary search tree in Python?</h2>
-              <p class="mt-3 text-gray-600">I'm struggling with implementing a BST from scratch. Can someone explain the insertion and deletion methods with examples?</p>
+              <h2 class="text-lg lg:text-xl font-semibold mt-2 text-[var(--footer-bg)]">How to implement binary search tree in Python?</h2>
+              <p class="mt-3 text-gray-600 text-sm lg:text-base">I'm struggling with implementing a BST from scratch. Can someone explain the insertion and deletion methods with examples?</p>
               <div class="mt-4 bg-gray-100 rounded-lg overflow-hidden">
-                <img src="https://www.gustavwengel.dk/assets/img/err-msg/image_7.png" alt="Code" class="w-full h-40 object-cover">
+                <img src="https://www.gustavwengel.dk/assets/img/err-msg/image_7.png" alt="Code" class="w-full h-32 lg:h-40 object-cover">
               </div>
-              <div class="mt-5 flex justify-between items-center text-sm text-gray-600">
-                <div class="flex items-center gap-5">
-                  <button class="flex items-center gap-1 hover:text-[var(--color-accent)] transition"><span class="material-symbols-outlined text-lg">thumb_up</span> <span>24</span></button>
-                  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">chat_bubble_outline</span> 8 answers</span>
-                  <button class="hover:text-[var(--color-accent)] transition"><span class="material-symbols-outlined text-lg">bookmark_border</span></button>
+              <div class="mt-4 lg:mt-5 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3 text-sm text-gray-600">
+                <div class="flex items-center gap-4 lg:gap-5">
+                  <button class="flex items-center gap-1 hover:text-[var(--color-accent)] transition"><span class="material-symbols-outlined text-base lg:text-lg">thumb_up</span> <span class="text-xs lg:text-sm">24</span></button>
+                  <span class="flex items-center gap-1 text-xs lg:text-sm"><span class="material-symbols-outlined text-base lg:text-lg">chat_bubble_outline</span> 8 answers</span>
+                  <button class="hover:text-[var(--color-accent)] transition"><span class="material-symbols-outlined text-base lg:text-lg">bookmark_border</span></button>
                 </div>
-                <div class="flex gap-2">
-                 <span class="bg-[var(--color-tags)] text-teal-700 text-xs  px-3 py-1 rounded-full">Python</span>
-                  <span class="bg-[var(--color-tags)] text-teal-700 text-xs  px-3 py-1 rounded-full">Data Structures</span>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-[var(--color-tags)] text-teal-700 text-xs px-2 lg:px-3 py-1 rounded-full">Python</span>
+                  <span class="bg-[var(--color-tags)] text-teal-700 text-xs px-2 lg:px-3 py-1 rounded-full">Data Structures</span>
                 </div>
               </div>
             </div>
@@ -96,26 +103,26 @@
         </article>
 
         <!-- Post 2 -->
-        <article class="bg-white rounded-xl shadow-sm p-6">
+        <article class="bg-white rounded-xl lg:rounded-2xl shadow-sm p-6">
           <div class="flex items-start gap-4">
-            <img src="public/f6.png" alt="Fatma Karray" class="w-12 h-12 rounded-full object-cover">
+            <img src="public/f6.png" alt="Fatma Karray" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full object-cover">
             <div class="flex-1">
-              <div class="flex items-center gap-3 text-sm">
-                <span class="font-semibold text-[var(--footer-bg)]">Fatma Karray</span>
-                <span class="text-gray-500">4 hours ago</span>
-                <span class="bg-[var(--color-tags)] text-teal-700 text-xs  px-3 py-1 rounded-full">Mathematics</span>
+              <div class="flex flex-wrap items-center gap-2 lg:gap-3 text-sm">
+                <span class="font-semibold text-[var(--footer-bg)] text-sm lg:text-base">Fatma Karray</span>
+                <span class="text-gray-500 text-xs lg:text-sm">4 hours ago</span>
+                <span class="bg-[var(--color-tags)] text-teal-700 text-xs px-2 lg:px-3 py-1 rounded-full">Mathematics</span>
               </div>
-              <h2 class="text-xl font-semibold mt-2 text-[var(--footer-bg)]">Best resources for learning calculus?</h2>
-              <p class="mt-3 text-gray-600">I'm looking for good online resources and books to master calculus. What worked best for you?</p>
-              <div class="mt-5 flex justify-between items-center text-sm text-gray-600">
-                <div class="flex items-center gap-5">
-                  <button class="flex items-center gap-1 hover:text-[var(--color-accent)] transition"><span class="material-symbols-outlined text-lg">thumb_up</span> <span>18</span></button>
-                  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">chat_bubble_outline</span> 12 answers</span>
-                  <button class="hover:text-[var(--color-accent)] transition"><span class="material-symbols-outlined text-lg">bookmark_border</span></button>
+              <h2 class="text-lg lg:text-xl font-semibold mt-2 text-[var(--footer-bg)]">Best resources for learning calculus?</h2>
+              <p class="mt-3 text-gray-600 text-sm lg:text-base">I'm looking for good online resources and books to master calculus. What worked best for you?</p>
+              <div class="mt-4 lg:mt-5 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3 text-sm text-gray-600">
+                <div class="flex items-center gap-4 lg:gap-5">
+                  <button class="flex items-center gap-1 hover:text-[var(--color-accent)] transition"><span class="material-symbols-outlined text-base lg:text-lg">thumb_up</span> <span class="text-xs lg:text-sm">18</span></button>
+                  <span class="flex items-center gap-1 text-xs lg:text-sm"><span class="material-symbols-outlined text-base lg:text-lg">chat_bubble_outline</span> 12 answers</span>
+                  <button class="hover:text-[var(--color-accent)] transition"><span class="material-symbols-outlined text-base lg:text-lg">bookmark_border</span></button>
                 </div>
-                <div class="flex gap-2">
-                   <span class="bg-[var(--color-tags)] text-teal-700 text-xs  px-3 py-1 rounded-full">Calculus</span>
-                  <span class="bg-[var(--color-tags)] text-teal-700 text-xs  px-3 py-1 rounded-full">Study Tips</span>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-[var(--color-tags)] text-teal-700 text-xs px-2 lg:px-3 py-1 rounded-full">Calculus</span>
+                  <span class="bg-[var(--color-tags)] text-teal-700 text-xs px-2 lg:px-3 py-1 rounded-full">Study Tips</span>
                 </div>
               </div>
             </div>
@@ -123,29 +130,29 @@
         </article>
 
         <!-- Post 3 -->
-        <article class="bg-white rounded-xl shadow-sm p-6">
+        <article class="bg-white rounded-xl lg:rounded-2xl shadow-sm p-6">
           <div class="flex items-start gap-4">
-            <img src="public/f4.png" alt="Mohamed Trabelsi" class="w-12 h-12 rounded-full object-cover">
+            <img src="public/f4.png" alt="Mohamed Trabelsi" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full object-cover">
             <div class="flex-1">
-              <div class="flex items-center gap-3 text-sm">
-                <span class="font-semibold text-[var(--footer-bg)]">Mohamed Trabelsi</span>
-                <span class="text-gray-500">8 hours ago</span>
-                <span class="bg-[var(--color-tags)] text-teal-700 text-xs  px-3 py-1 rounded-full">Engineering</span>
+              <div class="flex flex-wrap items-center gap-2 lg:gap-3 text-sm">
+                <span class="font-semibold text-[var(--footer-bg)] text-sm lg:text-base">Mohamed Trabelsi</span>
+                <span class="text-gray-500 text-xs lg:text-sm">8 hours ago</span>
+                <span class="bg-[var(--color-tags)] text-teal-700 text-xs px-2 lg:px-3 py-1 rounded-full">Engineering</span>
               </div>
-              <h2 class="text-xl font-semibold mt-2 text-[var(--footer-bg)]">Circuit analysis help needed</h2>
-              <p class="mt-3 text-gray-600">Can someone help me solve this circuit using Kirchhoff's laws? I'm getting confused with the current directions.</p>
+              <h2 class="text-lg lg:text-xl font-semibold mt-2 text-[var(--footer-bg)]">Circuit analysis help needed</h2>
+              <p class="mt-3 text-gray-600 text-sm lg:text-base">Can someone help me solve this circuit using Kirchhoff's laws? I'm getting confused with the current directions.</p>
               <div class="mt-4 bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
-                <img src="https://www.gustavwengel.dk/assets/img/err-msg/image_1.png" alt="Circuit" class="w-full h-40 object-cover">
+                <img src="https://www.gustavwengel.dk/assets/img/err-msg/image_1.png" alt="Circuit" class="w-full h-32 lg:h-40 object-cover">
               </div>
-              <div class="mt-5 flex justify-between items-center text-sm text-gray-600">
-                <div class="flex items-center gap-5">
-                  <button class="flex items-center gap-1 hover:text-[var(--color-accent)] transition"><span class="material-symbols-outlined text-lg">thumb_up</span> <span>15</span></button>
-                  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">chat_bubble_outline</span> 6 answers</span>
-                  <button class="hover:text-[var(--color-accent)] transition"><span class="material-symbols-outlined text-lg">bookmark_border</span></button>
+              <div class="mt-4 lg:mt-5 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-3 text-sm text-gray-600">
+                <div class="flex items-center gap-4 lg:gap-5">
+                  <button class="flex items-center gap-1 hover:text-[var(--color-accent)] transition"><span class="material-symbols-outlined text-base lg:text-lg">thumb_up</span> <span class="text-xs lg:text-sm">15</span></button>
+                  <span class="flex items-center gap-1 text-xs lg:text-sm"><span class="material-symbols-outlined text-base lg:text-lg">chat_bubble_outline</span> 6 answers</span>
+                  <button class="hover:text-[var(--color-accent)] transition"><span class="material-symbols-outlined text-base lg:text-lg">bookmark_border</span></button>
                 </div>
-                <div class="flex gap-2">
-                 <span class="bg-[var(--color-tags)] text-teal-700 text-xs  px-3 py-1 rounded-full">Circuits</span>
-                  <span class="bg-[var(--color-tags)] text-teal-700 text-xs  px-3 py-1 rounded-full">Homework Help</span>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-[var(--color-tags)] text-teal-700 text-xs px-2 lg:px-3 py-1 rounded-full">Circuits</span>
+                  <span class="bg-[var(--color-tags)] text-teal-700 text-xs px-2 lg:px-3 py-1 rounded-full">Homework Help</span>
                 </div>
               </div>
             </div>
@@ -156,9 +163,9 @@
       <!-- Sidebar -->
       <aside class="space-y-6">
         <!-- Trending Topics -->
-        <div class="bg-white rounded-xl shadow-sm p-6">
-          <h3 class="flex items-center gap-2 font-semibold text-lg text-[var(--footer-bg)] mb-4 sm:mb-5">
-            <span class="material-symbols-outlined text-red-500">local_fire_department</span> Trending Topics
+        <div class="bg-white rounded-xl lg:rounded-2xl shadow-sm p-6">
+          <h3 class="flex items-center gap-2 font-semibold text-base lg:text-lg text-[var(--footer-bg)] mb-4 sm:mb-5">
+            <span class="material-symbols-outlined text-red-500 text-lg lg:text-xl">local_fire_department</span> Trending Topics
           </h3>
           <div class="space-y-3 sm:space-y-4">
             <div class="flex justify-between items-center bg-gray-50 hover:bg-gray-100 rounded-lg p-3 sm:p-4 transition-colors">
@@ -181,16 +188,16 @@
         </div>
 
         <!-- Most Active Students -->
-        <div class="bg-white rounded-xl shadow-sm p-6">
-          <h3 class="flex items-center gap-2 font-semibold text-lg text-[var(--footer-bg)]">
-            <span class="material-symbols-outlined text-[var(--footer-bg)]">people</span> Most Active Students
+        <div class="bg-white rounded-xl lg:rounded-2xl shadow-sm p-6">
+          <h3 class="flex items-center gap-2 font-semibold text-base lg:text-lg text-[var(--footer-bg)]">
+            <span class="material-symbols-outlined text-[var(--footer-bg)] text-lg lg:text-xl">people</span> Most Active Students
           </h3>
           <ul class="mt-5 space-y-5">
             <li class="flex items-center justify-between">
               <div class="flex items-center gap-3">
                 <img src="public/f5.png" alt="Sarah" class="w-10 h-10 rounded-full object-cover">
                 <div>
-                  <p class="font-semibold   text-[var(--footer-bg)] text-sm">Sarah Mansouri</p>
+                  <p class="font-semibold text-[var(--footer-bg)] text-sm">Sarah Mansouri</p>
                   <p class="text-xs text-gray-500">245 answers</p>
                 </div>
               </div>
@@ -200,7 +207,7 @@
               <div class="flex items-center gap-3">
                 <img src="public/f3.png" alt="Yassine" class="w-10 h-10 rounded-full object-cover">
                 <div>
-                  <p class="font-semibold  text-[var(--footer-bg)] text-sm">Yassine Bouli</p>
+                  <p class="font-semibold text-[var(--footer-bg)] text-sm">Yassine Bouli</p>
                   <p class="text-xs text-gray-500">198 answers</p>
                 </div>
               </div>
@@ -210,7 +217,7 @@
               <div class="flex items-center gap-3">
                 <img src="public/f4.png" alt="Amira" class="w-10 h-10 rounded-full object-cover">
                 <div>
-                  <p class="font-semibold   text-[var(--footer-bg)] text-sm">Amira Zouari</p>
+                  <p class="font-semibold text-[var(--footer-bg)] text-sm">Amira Zouari</p>
                   <p class="text-xs text-gray-500">167 answers</p>
                 </div>
               </div>
@@ -222,9 +229,9 @@
     </div>
   </main>
 
-  <!-- FOOTER (exactly the same as your other pages) -->
+  <!-- UPDATED FOOTER (from Alaa's page) -->
   <footer class="bg-footer text-white mt-12 lg:mt-20">
-    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 lg:py-12">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
         <div class="sm:col-span-2 lg:col-span-1">
           <div class="flex items-center gap-3">
@@ -266,8 +273,9 @@
     </div>
   </footer>
 
+  <!-- Mobile menu script -->
   <script>
-    document.getElementById('mobile-menu-button').addEventListener('click', () => {
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
   </script>
