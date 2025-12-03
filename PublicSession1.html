@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Public Session</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="file.css" />
+</head>
+
+<body class="bg-primary text-text font-sans w-full mt-15">
+  <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+
+    <!-- Header avec avatars -->
+    <div class="bg-session1 rounded-lg shadow-sm p-3 sm:p-4 mb-4">
+      <div class="flex items-center justify-between gap-2">
+
+        <div class="bg-session px-3 sm:px-6 py-2 sm:py-3 rounded">
+          <p class="text-xs sm:text-sm font-regular">Live Public Session</p>
+        </div>
+
+        <button class="text-gray-600 hover:text-gray-800 hidden sm:block">
+          <i class="fas fa-chevron-left text-xl"></i>
+        </button>
+
+        <div class="flex items-center space-x-2 sm:space-x-3 overflow-x-auto flex-1 px-2">
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/g1.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Amine</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/f5.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Alaa</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/g5.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Aziz</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/f4.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Nouhaa</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/f6.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Ines</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/f1.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Nour</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/g6.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Omar</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/f2.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Imen</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/f3.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Ons</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/g2.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Ayoub</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/g4.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Adem</span>
+          </div>
+
+          <!-- Doublons (présents dans le code original) -->
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/g1.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Amine</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/f5.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Alaa</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/g5.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Aziz</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/f4.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Nouhaa</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/f6.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Ines</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/g6.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Omar</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/f2.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Imen</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/f3.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Ons</span>
+          </div>
+
+          <div class="flex flex-col items-center flex-shrink-0">
+            <img src="public/g2.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+            <span class="text-xs mt-1">Ayoub</span>
+          </div>
+
+        </div>
+
+        <button class="text-gray-600 hover:text-gray-800 hidden sm:block">
+          <i class="fas fa-chevron-right text-xl"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr_1fr] gap-4 lg:gap-6">
+
+      <!-- Colonne gauche -->
+      <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 lg:mr-4">
+        <h3 class="font-semibold mb-4 text-center text-sm sm:text-base">Ask You To Join</h3>
+
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2 sm:space-x-3">
+              <img src="public/f6.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+              <span class="text-xs sm:text-sm">Nour</span>
+            </div>
+            <button class="button text-white px-3 sm:px-5 py-1 rounded-full text-xs sm:text-sm">Accept</button>
+          </div>
+
+          <hr class="w-1/2 mx-auto gradient-hr" />
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2 sm:space-x-3">
+              <img src="public/g2.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+              <span class="text-xs sm:text-sm">Ayoub</span>
+            </div>
+            <button class="button text-white px-3 sm:px-5 py-1 rounded-full text-xs sm:text-sm">Accept</button>
+          </div>
+
+          <hr class="w-1/2 mx-auto gradient-hr" />
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2 sm:space-x-3">
+              <img src="public/g5.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+              <span class="text-xs sm:text-sm">Hadi</span>
+            </div>
+            <button class="button text-white px-3 sm:px-5 py-1 rounded-full text-xs sm:text-sm">Accept</button>
+          </div>
+
+          <hr class="w-1/2 mx-auto gradient-hr" />
+        </div>
+
+        <div class="mt-8 sm:mt-12 space-y-8 sm:space-y-14">
+          <h3 class="font-semibold mb-4 text-center text-sm sm:text-base">Share The Session</h3>
+
+          <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-8">
+            <!-- Colonne des deux boutons -->
+            <div class="space-y-4 sm:space-y-6 w-full sm:w-40">
+              <!-- Bouton Email -->
+              <button class="button2 text-white px-4 py-2 rounded-full text-xs sm:text-sm flex items-center justify-center gap-2 w-full">
+                <img src="public/email.png" class="w-4 h-4" alt="email icon" />
+                Send Email
+              </button>
+
+              <!-- Bouton Copy Link -->
+              <button class="button2 text-white px-4 py-2 rounded-full text-xs sm:text-sm flex items-center justify-center gap-2 w-full">
+                <img src="public/lien.png" class="w-4 h-4" alt="link icon" />
+                Copy Link
+              </button>
+            </div>
+
+            <!-- QR Code -->
+            <div class="w-20 h-20 sm:w-24 sm:h-24 bg-white border-2 border-gray-300 p-2">
+              <img src="public/QR.png" class="w-full h-full object-contain" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Colonne centrale - Grille vidéo / Chat -->
+      <div class="rounded-lg shadow-lg w-full h-auto lg:h-screen space-y-4 sm:space-y-6 lg:mx-6">
+
+        <!-- Image principale qui prend la moitié de la hauteur -->
+        <div class="w-full h-64 sm:h-96 lg:h-1/2">
+          <img src="public/meet.png" alt="Main Image" class="w-full h-full object-cover rounded-lg" />
+        </div>
+
+        <!-- Partie chat et input (autre moitié) -->
+        <div class="flex flex-col justify-between h-auto lg:h-1/2 p-3 sm:p-4">
+
+          <!-- Chat : image bot + input -->
+          <div class="flex items-center space-x-2 mt-4 sm:mt-8 w-full">
+            <img src="public/chat.png" alt="Bot" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full flex-shrink-0" />
+            <div class="relative flex-1">
+              <input type="text" placeholder="I'm Here To Help You !"
+                class="w-full px-3 py-2 pr-10 border rounded-full focus:outline-none text-xs sm:text-sm" />
+              <img src="public/paperr (2).png" alt="Send"
+                class="w-4 h-4 sm:w-5 sm:h-5 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer" />
+            </div>
+          </div>
+
+          <!-- Bouton Go Out avec image au-dessus, alignée à droite -->
+          <div class="flex items-center justify-end mt-4 sm:mt-6">
+            <button class="flex items-center space-x-2 text-xs sm:text-sm px-3 sm:px-4 py-2 text-dark rounded">
+              <img src="public/exit.png" alt="Exit Icon" class="w-4 h-4 sm:w-5 sm:h-5" />
+              <span>Go Out</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Colonne droite -->
+      <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 lg:ml-10">
+        <div class="flex items-center space-x-2 sm:space-x-3 mb-4">
+          <img src="public/f2.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full" />
+          <span class="font-semibold text-sm sm:text-base">Imen Bouchriha</span>
+        </div>
+
+        <div class="w-full bg-[#FFC8C2] h-3 sm:h-4 rounded-full mb-4 sm:mb-6">
+          <div class="h-full w-1/2 bg-[#FF522F] rounded-full"></div>
+        </div>
+
+        <div class="space-y-3 sm:space-y-4 mb-6 sm:mb-10">
+          <div class="flex items-center justify-between">
+            <span class="text-xs sm:text-sm">First Task</span>
+            <!-- Icône check personnalisée -->
+            <img src="public/check.png" class="w-4 h-4 sm:w-5 sm:h-5" alt="check" />
+          </div>
+
+          <hr class="w-1/2 gradient-hr" />
+
+          <div class="flex items-center justify-between">
+            <span class="text-xs sm:text-sm">Second Task</span>
+            <!-- Icône check personnalisée -->
+            <img src="public/spinner.png" class="w-4 h-4 sm:w-5 sm:h-5" alt="check" />
+          </div>
+
+          <hr class="w-1/2 gradient-hr" />
+
+          <div class="flex items-center justify-between">
+            <span class="text-xs sm:text-sm">Third Task</span>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <p class="text-xs text-center mb-2">Rating assigned to you</p>
+          <div class="flex space-x-1 justify-center">
+            <img src="public/etoile.png" class="h-3 w-3 sm:h-4 sm:w-4" />
+            <img src="public/etoile.png" class="h-3 w-3 sm:h-4 sm:w-4" />
+            <img src="public/etoile.png" class="h-3 w-3 sm:h-4 sm:w-4" />
+            <img src="public/etoile.png" class="h-3 w-3 sm:h-4 sm:w-4" />
+            <img src="public/etoile1.png" class="h-3 w-3 sm:h-4 sm:w-4" />
+          </div>
+        </div>
+
+        <div class="space-y-3 mb-4">
+          <h3 class="font-semibold mb-4 text-center text-sm sm:text-base">Conversation</h3>
+
+          <div class="flex items-start space-x-2">
+            <img src="public/f3.png" class="w-8 h-8 sm:w-12 sm:h-12 rounded-full flex-shrink-0" />
+            <div class="bg-gray-100 rounded-3xl px-3 py-2 text-xs sm:text-sm">
+              You can explain more this part ?
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-2 justify-end">
+            <div class="bg-blue-300 rounded-3xl px-3 py-2 text-xs sm:text-sm">Yes For sure</div>
+            <img src="public/f2.png" class="w-8 h-8 sm:w-12 sm:h-12 rounded-full flex-shrink-0" />
+          </div>
+
+          <div class="flex items-start space-x-2">
+            <img src="public/f3.png" class="w-8 h-8 sm:w-12 sm:h-12 rounded-full flex-shrink-0" />
+            <div class="bg-gray-100 rounded-3xl px-3 py-2 text-xs sm:text-sm">Thank You !</div>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <!-- Emoji -->
+          <button class="text-gray-400 hover:text-gray-600">
+            <i class="far fa-smile text-lg sm:text-xl"></i>
+          </button>
+
+          <!-- Input avec icône interne -->
+          <div class="relative flex-1">
+            <input type="text" placeholder="Send message"
+              class="w-full bg-gray-100 rounded-full px-3 sm:px-4 py-2 text-xs sm:text-sm pr-10 focus:outline-none" />
+
+            <!-- Icône à droite dans l'input -->
+            <img src="public/paperr (2).png"
+              class="w-4 h-4 sm:w-5 sm:h-5 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer opacity-80 hover:opacity-100" />
+          </div>
+
+          <!-- Send button -->
+          <button class="text-gray-800 hover:text-gray-600">
+            <i class="fas fa-paper-plane text-sm sm:text-base"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="px-4 sm:px-6 md:px-10 py-8 md:py-10 bg-footer text-light mt-8">
+    <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-8">
+      <div class="text-center md:text-left">
+        <img src="public/logo1.png" class="h-12 sm:h-16 mb-4 bg-textlight mx-auto md:mx-0" />
+        <p class="max-w-xs text-gray-300 text-sm sm:text-base mx-auto md:mx-0 md:mt-16">
+          Connecting students worldwide to learn and grow together.
+        </p>
+      </div>
+
+      <div class="text-center md:text-left">
+        <h3 class="text-lg sm:text-xl font-semibold mb-2 bg-textlight">Quick Links</h3>
+        <ul class="space-y-1 text-gray-300 bg-textlight text-sm sm:text-base">
+          <li>Home</li>
+          <li>About Us</li>
+          <li>How It Works</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div class="text-center md:text-left">
+        <h3 class="text-lg sm:text-xl font-semibold mb-2 bg-textlight">Resources</h3>
+        <ul class="space-y-1 text-gray-300 bg-textlight text-sm sm:text-base">
+          <li>Help Center</li>
+          <li>Privacy Policy</li>
+          <li>Terms of Service</li>
+          <li>FAQs</li>
+        </ul>
+      </div>
+
+      <div class="text-center md:text-left">
+        <h3 class="text-lg sm:text-xl font-semibold mb-2 bg-textlight">Get in Touch</h3>
+        <p class="text-gray-300 mb-3 bg-textlight text-sm sm:text-base">hello@esprit2peer.com</p>
+
+        <div class="flex gap-4 justify-center md:justify-start">
+          <img src="public/facebook.png" class="h-5 sm:h-6" />
+          <img src="public/instagram.png" class="h-5 sm:h-6" />
+          <img src="public/twitter.png" class="h-5 sm:h-6" />
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center text-gray-400 mt-8 md:mt-10 bg-textlight text-sm sm:text-base">© 2025 Esprit2Peer. All Rights Reserved.</p>
+  </footer>
+
+</body>
+
+</html>
