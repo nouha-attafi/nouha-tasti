@@ -1,0 +1,279 @@
+/* ===== GLOBAL + TEAM GLOBAL STYLES (FINAL MERGED) ===== */
+
+/* Tailwind import (only once) */
+@import "tailwindcss";
+
+/* ===== CSS Variables unified (no duplicates) ===== */
+:root {
+  --color-primary: #fdfbee;
+  --color-secondary: #57B4BA;
+  --color-textblue: #32B4AE;
+  --color-accent: #FE4F2D;
+  --color-accent-30: rgb(254, 79, 45, 0.3);
+  --color-card: #F7F4E8;
+  --color-darkgreen: #015551;
+  --color-light: #FFFFFF;
+  --footer-bg: #004A4A;
+  --footer-bg-30: rgba(0, 74, 74, 0.3);
+
+  --color-text: #000000;
+  --color-background: rgba(255, 255, 255, 0.4);
+
+  --color-button1-start: rgba(254, 79, 45, 0.56);
+  --color-button1-end: rgba(255, 54, 14, 1);
+
+  --color-p-start: #32B4AE;
+  --color-p-end: #FE4F2D;
+
+  --color-b-satart: #57B4BA;
+  --color-b-end: #10B981;
+
+  --color-backgroundSession: rgba(254, 79, 45, 0.61);
+  --color-backgroundSession1: rgba(0, 74, 74, 0.15);
+
+  --color-star-active: #FBBF24;
+
+  /* New member variables appended */
+  --color-textgray: rgb(0, 0, 0, 0.34);
+  --color-backgroundicon: #D9D9D9;
+  --color-progress-bar: #fecaca;
+  --color-session-progress-start: #ff6b6b;
+  --color-session-progress-end: #fec89a;
+  --color-task-complete: #22c55e;
+  --color-task-pending: #eab308;
+  --color-card-strong: #ffffff;
+}
+
+/* ===== Tailwind layers (only once) ===== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Utility classes ===== */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-accent1 { color: var(--color-accent); }
+
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-accent { color: var(--color-accent); }
+
+.bg-textlight { color: var(--color-light); }
+.bg-textdark { color: var(--color-text); }
+.bg-textblue1 { color: var(--color-textblue); }
+.bg-textgreen { color: var(--color-darkgreen); }
+.bg-text-gray { color: var(--color-textgray); }
+
+.bg-footer { background-color: var(--footer-bg); }
+.bg-footer-30 { background-color: var(--footer-bg-30); }
+.bg-accent-30 { background-color: var(--color-accent-30); }
+.bg-back-4 { background-color: var(--color-background); }
+.bg-bgCard { background-color: var(--color-card); }
+
+.bg-session { background-color: var(--color-backgroundSession); }
+.bg-session1 { background-color: var(--color-backgroundSession1); }
+.bg-progress { background-color: var(--color-progress-bar); }
+
+.bg-icon { background-color: var(--color-backgroundicon); }
+.bg-new-icon-style {
+  background-color: var(--color-backgroundicon);
+  color: var(--color-textgray);
+  border-radius: 0.4rem;
+  padding: 0.3rem;
+}
+
+/* ===== Gradient text ===== */
+.p {
+  background: linear-gradient(to right, var(--color-p-start), var(--color-p-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ===== Gradient hr ===== */
+.gradient-hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-p-start), var(--color-p-end));
+  border-radius: 2px;
+}
+
+.bggrad {
+  background: linear-gradient(
+    to right,
+    rgba(47, 182, 137, 0.86),
+    #949e868c,
+    rgba(254, 79, 45, 0.4)
+  );
+}
+
+/* ===== Buttons ===== */
+.button {
+  background: linear-gradient(to right, var(--color-button1-start), var(--color-button1-end));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.button2 {
+  background: linear-gradient(to right, var(--color-b-satart), var(--color-b-end));
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+.button2:hover { opacity: 0.9; }
+
+/* ===== Star rating ===== */
+.star-rating-container { display: flex; gap: 0.25rem; }
+.star-icon {
+  cursor: pointer;
+  color: #E5E7EB;
+  transition: color 0.2s ease;
+  font-size: 1.875rem;
+}
+.star-icon.active,
+.star-icon:hover,
+.star-rating-container:hover .star-icon {
+  color: var(--color-star-active);
+}
+.star-rating-container .star-icon:hover ~ .star-icon {
+  color: #E5E7EB;
+}
+
+/* ===== Modal styles ===== */
+.modal-overlay { background-color: rgba(0, 0, 0, 0.7); }
+.modal-content {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+}
+.modal-header { border-bottom-color: #E5E7EB; }
+.dark .modal-header { border-bottom-color: #374151; }
+
+.modal-text-secondary { color: #4B5563; }
+.dark .modal-text-secondary { color: #D1D5DB; }
+
+.modal-textarea { border-color: #E5E7EB; background-color: white; }
+.dark .modal-textarea { border-color: #374151; background-color: #1F2937; }
+
+.modal-close { color: #4B5563; }
+.modal-close:hover { color: #111827; }
+.dark .modal-close { color: #D1D5DB; }
+.dark .modal-close:hover { color: #F9FAFB; }
+
+/* ===== Pie chart and card visuals ===== */
+.pie-chart {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--color-p-start) 0% 85%,
+    var(--color-accent) 85% 90%,
+    var(--color-secondary) 90% 100%
+  );
+}
+.card-bg { background-color: var(--color-background); backdrop-filter: blur(10px); }
+
+/* ===== Icon font settings ===== */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size: inherit;
+}
+
+/* ===== Layout containers ===== */
+.nav-gap-51 { display: flex; gap: 51px; }
+.content-container { margin-left: 3rem; margin-right: 3rem; }
+
+/* ===== Toggles (switches) ===== */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: var(--color-secondary);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.toggle-slider::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--color-light);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .toggle-slider {
+  background-color: var(--color-b-end);
+}
+input:checked + .toggle-slider::before {
+  transform: translateX(30px);
+}
+
+/* toggles responsive */
+@media (max-width: 768px) {
+  .toggle-switch { width: 50px; height: 25px; }
+  .toggle-slider::before { height: 18px; width: 18px; inset: auto 3px 3px 3px; }
+  input:checked + .toggle-slider::before { transform: translateX(25px); }
+}
+
+/* ===== Custom checkboxes ===== */
+.custom-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-secondary);
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  background-color: var(--color-card);
+}
+.custom-checkbox:checked {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.custom-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  color: var(--color-light);
+  font-size: 14px;
+  font-weight: bold;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* checkbox responsive */
+@media (max-width: 768px) {
+  .custom-checkbox { width: 18px; height: 18px; }
+}
+
+/* ===== extra transitions ===== */
+.transition-all { transition: all 0.3s ease; }
+.transition-colors { transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+.transition-opacity { transition: opacity 0.3s ease; }
+.transition-transform { transition: transform 0.3s ease; }
+
+.hover\:scale-105:hover { transform: scale(1.05); }
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+}
